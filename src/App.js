@@ -5,6 +5,7 @@ import ElementCard from "./components/ElementCard";
 // Try to use filter for the names when inputting search
 function App() {
   const [state, setState] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const getElement = async () => {
     let response = await fetch(
@@ -18,12 +19,19 @@ function App() {
         return element;
       })
     );
-    // console.log(state);
+    // Allows us to grab data before rendering it
+    setLoading(false);
   };
 
+  console.log(state);
   useEffect(() => {
     getElement();
   }, []);
+
+  // displays loading before data fetched
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="App">
