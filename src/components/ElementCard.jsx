@@ -1,6 +1,4 @@
 import React from "react";
-import ElementCardInfo from "./ElementCardInfo";
-import { useState } from "react";
 
 const ElementCard = (props) => {
   const element = props.element;
@@ -14,12 +12,7 @@ const ElementCard = (props) => {
     );
   });
 
-  return (
-    <div>
-      {elementName}
-      {/* <ElementCardInfo names={elementName} /> */}
-    </div>
-  );
+  return <div>{elementName}</div>;
 };
 
 export default ElementCard;
