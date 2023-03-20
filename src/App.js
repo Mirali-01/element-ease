@@ -13,7 +13,7 @@ function App() {
     );
     let data = await response.json();
     data = data.data;
-    data.length = 5;
+    // data.length = 5;
     setState(
       data.map((element) => {
         return element;
