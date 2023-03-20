@@ -16,8 +16,25 @@ code {
     monospace;
 }
 
+.periodicTable{
+  border: solid peru;
+  display: grid;
+  grid-template-columns: repeat(18, 70px);
+  grid-template-rows: repeat(10, 70px);
+  grid-gap: 4px;
+  position: absolute;
+  height: 600px;
+  width: 1600px;
+  top: 5%;
+  left: 5%;
+}
+
 .elementCard{
   border: solid purple;
-  height: 50px;
-  width: 50px;
+  font-size: 8px;
+}
+
+.elementCard:hover{
+  transform: scale(1.25, 1.25);
+  z-index: 1;
 }
