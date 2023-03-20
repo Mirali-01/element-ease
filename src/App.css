@@ -1,14 +1,16 @@
 .App {
   text-align: center;
+  color: rgba(245, 245, 245, 0.85);
+  text-decoration: underline;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /* font-family: 'Arial Rounded MT Bold'; */
+  font-family: "Rockwell";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
@@ -16,25 +18,29 @@ code {
     monospace;
 }
 
+.loadingScreen{
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+}
+
 .periodicTable{
-  border: solid peru;
   display: grid;
-  grid-template-columns: repeat(18, 70px);
-  grid-template-rows: repeat(10, 70px);
-  grid-gap: 4px;
+  grid-template-columns: repeat(18, 60px);
+  grid-template-rows: repeat(10, 60px);
+  gap: 5px;
   position: absolute;
-  height: 600px;
-  width: 1600px;
-  top: 5%;
+  top: 10%;
   left: 5%;
 }
 
 .elementCard{
-  border: solid purple;
-  font-size: 8px;
+  border: solid;
+  font-size: 6px;
+  border-radius: 5%;
 }
 
 .elementCard:hover{
-  transform: scale(1.25, 1.25);
+  transform: scale(1.5, 1.5);
   z-index: 1;
 }

@@ -4,6 +4,19 @@ const ElementCard = (props) => {
   const element = props.element;
   console.log(element);
 
+  const colorCategory = {
+    "diatomic nonmetal": "lightgreen",
+    "noble gas": "purple",
+    "alkali metal": "firebrick",
+    "alkaline earth metal": "orange",
+    metalloid: "yellowgreen",
+    "polyatomic nonmetal": "darkgreen",
+    "post-transition metal": "darkcyan",
+    "transition metal": "gray",
+    lanthanide: "deepskyblue",
+    actinide: "peru",
+  };
+
   const elementName = element.map((name, key) => {
     return (
       <div
@@ -12,11 +25,13 @@ const ElementCard = (props) => {
         style={{
           gridRow: name.ypos,
           gridColumn: name.xpos,
+          color: colorCategory[name.category],
+          borderColor: colorCategory[name.category],
         }}
       >
-        <div>{name.number}</div>
+        <p>{name.number}</p>
         <h1>{name.symbol}</h1>
-        <div>{name.name}</div>
+        <p>{name.name}</p>
       </div>
     );
   });

@@ -29,12 +29,21 @@ function App() {
   }, []);
 
   // displays loading before data fetched
+  // setTimeout for loading img on screen
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loadingScreen">
+        <img
+          src="https://www.wearechemistry.com/images/bganimated.gif"
+          alt="Chemistry is Cool..."
+        />
+      </div>
+    );
   }
 
   return (
     <div className="App">
+      <h1>The Periodic Table of Elements</h1>
       <ElementCard element={state} />
     </div>
   );
