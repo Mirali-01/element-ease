@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
+import ElementCard from "./components/ElementCard";
 
+// Try to use filter for the names when inputting search
 function App() {
+  const [state, setState] = useState(null);
+
+  const getElement = async () => {
+    let response = await fetch(
+      "https://kineticzephyr.onrender.com/periodictable/"
+    );
+    let data = await response.json();
+    data = data.data;
+    data.length = 5;
+    setState(
+      data.map((element) => {
+        return element;
+      })
+    );
+    // console.log(state);
+  };
+
+  useEffect(() => {
+    getElement();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ElementCard element={state} />
     </div>
   );
 }
