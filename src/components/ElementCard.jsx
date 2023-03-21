@@ -1,4 +1,6 @@
 import React from "react";
+import Portal from "./Portal";
+import { createPortal } from "react-dom";
 
 const ElementCard = (props) => {
   const element = props.element;
@@ -43,6 +45,9 @@ const ElementCard = (props) => {
     <div>
       {/* <button>Noble Gas</button> */}
       <div className="periodicTable">{elementName}</div>
+      <div className="portal">
+        <Portal />
+      </div>
     </div>
   );
 };
