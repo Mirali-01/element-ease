@@ -40,13 +40,12 @@ code {
   border-radius: 5%;
 }
 
-.elementCard h1{
-  /* border: solid yellow; */
-  font-weight: bolder;
-}
 
 
 .elementCard:hover{
   transform: scale(1.5, 1.5);
   z-index: 1;
+  color:var(--hover-color) !important;
+  border-color: var(--hover-border-color) !important;
+  background-color: var(--hover-background-color) !important;
 }

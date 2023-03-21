@@ -27,6 +27,9 @@ const ElementCard = (props) => {
           gridColumn: name.xpos,
           color: colorCategory[name.category],
           borderColor: colorCategory[name.category],
+          "--hover-color": "black",
+          "--hover-border-color": "transparent",
+          "--hover-background-color": colorCategory[name.category],
         }}
       >
         <p className="number">{name.number}</p>
@@ -38,6 +41,7 @@ const ElementCard = (props) => {
 
   return (
     <div>
+      {/* <button>Noble Gas</button> */}
       <div className="periodicTable">{elementName}</div>
     </div>
   );
