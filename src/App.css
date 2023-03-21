@@ -53,8 +53,9 @@ code {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  box-shadow: whitesmoke 0px 7px 30px 0px;
-  background-color: firebrick;
+  box-shadow: whitesmoke 0px 5px 20px 0px;
+  /* background-color: mediumaquamarine; */
+  background-color: mediumslateblue;
   border: 2px solid rgb(240, 240, 240);
   border-radius: 12px;
   position: absolute;
