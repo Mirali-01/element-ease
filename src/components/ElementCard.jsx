@@ -1,8 +1,11 @@
 import React from "react";
-import Portal from "./Portal";
+import { useState } from "react";
 import { createPortal } from "react-dom";
+import ModalContent from "./ModalContent";
 
 const ElementCard = (props) => {
+  const [showModal, setShowModal] = useState(false);
+
   const element = props.element;
   console.log(element);
 
@@ -23,6 +26,9 @@ const ElementCard = (props) => {
     return (
       <div
         className="elementCard"
+        onClick={() => {
+          setShowModal(true);
+        }}
         key={key}
         style={{
           gridRow: name.ypos,
@@ -45,9 +51,18 @@ const ElementCard = (props) => {
     <div>
       {/* <button>Noble Gas</button> */}
       <div className="periodicTable">{elementName}</div>
-      <div className="portal">
+      {showModal &&
+        createPortal(
+          <ModalContent
+            onClose={() => {
+              setShowModal(false);
+            }}
+          />,
+          document.body
+        )}
+      {/* <div className="portal">
         <Portal />
-      </div>
+      </div> */}
     </div>
   );
 };
