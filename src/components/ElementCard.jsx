@@ -29,7 +29,7 @@ const ElementCard = (props) => {
           borderColor: colorCategory[name.category],
         }}
       >
-        <p>{name.number}</p>
+        <p className="number">{name.number}</p>
         <h1>{name.symbol}</h1>
         <p>{name.name}</p>
       </div>
