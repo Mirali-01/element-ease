@@ -29,8 +29,10 @@ function App() {
   }, []);
 
   // displays loading before data fetched
-  // setTimeout for loading img on screen
   if (loading) {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
     return (
       <div className="loadingScreen">
         <img
