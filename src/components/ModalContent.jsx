@@ -1,11 +1,14 @@
 import React from "react";
 
-const ModalContent = (props) => {
-  const element = props.element;
+const ModalContent = ({ element, onClose }) => {
+  console.log(element);
+
   return (
-    <div className="modal">
-      <div>I'm a modal dialog</div>
-      <button onClick={props.onClose}>Close</button>
+    <div className="modalContainer">
+      <div className="modal">
+        <div></div>
+        <button onClick={onClose}>Close</button>
+      </div>
     </div>
   );
 };

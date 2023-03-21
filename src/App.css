@@ -30,7 +30,7 @@ code {
   grid-template-rows: repeat(10, 60px);
   gap: 5px;
   position: absolute;
-  top: 10%;
+  top: 12.5%;
   left: 5%;
 }
 
@@ -49,18 +49,29 @@ code {
   background-color: var(--hover-background-color) !important;
 }
 
+.modalContainer{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(176, 196, 222, 0.625);
+  position: absolute;
+  z-index: 0;
+}
+
 .modal {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   box-shadow: whitesmoke 0px 5px 20px 0px;
   /* background-color: mediumaquamarine; */
   background-color: mediumslateblue;
   border: 2px solid rgb(240, 240, 240);
   border-radius: 12px;
-  position: absolute;
+  margin: auto;
   width: 320px;
   top: 70px;
   left: calc(35.5%);
   bottom: 110px;
+  position: absolute;
+  z-index: 1;
 }

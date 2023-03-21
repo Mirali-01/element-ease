@@ -5,6 +5,7 @@ import ModalContent from "./ModalContent";
 
 const ElementCard = (props) => {
   const [showModal, setShowModal] = useState(false);
+  const [selectedElem, setSelectedElem] = useState({});
 
   const element = props.element;
   // console.log(element);
@@ -28,6 +29,7 @@ const ElementCard = (props) => {
         className="elementCard"
         onClick={() => {
           setShowModal(true);
+          setSelectedElem(element);
         }}
         key={key}
         style={{
@@ -54,7 +56,7 @@ const ElementCard = (props) => {
       {showModal &&
         createPortal(
           <ModalContent
-            element={element}
+            element={selectedElem}
             onClose={() => {
               setShowModal(false);
             }}
