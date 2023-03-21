@@ -34,6 +34,16 @@ code {
   left: 5%;
 }
 
+.categoryBtns{
+  /* display: grid; */
+  border: solid purple;
+}
+
+.categoryBtns button{
+  height: 50px;
+  width: 100px;
+}
+
 .elementCard{
   border: solid;
   font-size: 6px;

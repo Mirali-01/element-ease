@@ -4,7 +4,7 @@ import ElementCard from "./components/ElementCard";
 
 // Try to use filter for the names when inputting search
 function App() {
-  const [state, setState] = useState(null);
+  const [state, setState] = useState({});
   const [loading, setLoading] = useState(true);
 
   const getElement = async () => {

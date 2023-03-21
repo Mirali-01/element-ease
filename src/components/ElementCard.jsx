@@ -51,8 +51,13 @@ const ElementCard = (props) => {
 
   return (
     <div>
-      {/* <button>Noble Gas</button> */}
-      <div className="periodicTable">{elementName}</div>
+      <div className="periodicTable">
+        <div className="categoryBtns">
+          <button>Noble Gas</button>
+          <button>Diatomic Nonmetal</button>
+        </div>
+        {elementName}
+      </div>
       {showModal &&
         createPortal(
           <ModalContent
