@@ -21,6 +21,7 @@ code {
   display: flex;
   flex-direction: column;
   background-color: gray;
+  overflow: hidden;
 }
 
 .periodicTable{
@@ -34,8 +35,8 @@ code {
 }
 
 .categoryBtns{
-  display: grid;
-  /* border: solid purple; */
+  border: solid purple;
+  display: flexbox;
 }
 
 .categoryBtns button{

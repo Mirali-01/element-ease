@@ -41,7 +41,9 @@ const ElementCard = (props) => {
   return (
     <div>
       <div className="periodicTable">
-        <div className="categoryBtns">{/* <CategoryButton /> */}</div>
+        <div className="categoryBtns">
+          <CategoryButton />
+        </div>
         {elementName}
       </div>
       {showModal &&
