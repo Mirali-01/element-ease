@@ -3,7 +3,7 @@ import React from "react";
 const CategoryButton = () => {
   return (
     <div className="sameCategory">
-      <div></div>
+      <div className="colorBox"></div>
       <h2>Diatomic Nonmetal</h2>
     </div>
   );

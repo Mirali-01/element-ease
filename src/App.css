@@ -36,16 +36,26 @@ code {
 
 .categoryBtns{
   border: solid purple;
-  grid-column: 4;
-}
-
-.categoryBtns button{
-  height: 5vh;
-  width: 5vh;
+  grid-column: 4 / span 8;
+  grid-row: 1 / span 3;
+  font-size: 1vh;
 }
 
 .sameCategory{
   border: solid red;
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5vh;
+  height: 5vh;
+  width: 20vh;
+  align-items: center;
+
+}
+
+.colorBox{
+  border: solid blue;
+  height: 4vh;
+  width: 4vh;
 }
 
 .elementCard{
