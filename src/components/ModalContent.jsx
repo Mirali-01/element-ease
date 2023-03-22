@@ -15,12 +15,12 @@ const ModalContent = ({ element, onClose }) => {
           color: colorCategory[element.category],
           borderColor: colorCategory[element.category],
           "background-color": "black",
-          border: "solid",
+          border: "0.5vh solid",
         }}
       >
-        <p>{element.number}</p>
+        <h3>{element.number}</h3>
         <h1>{element.symbol}</h1>
-        <p>{element.name}</p>
+        <h3>{element.name}</h3>
         <button onClick={onClose}>Close</button>
       </div>
     </div>

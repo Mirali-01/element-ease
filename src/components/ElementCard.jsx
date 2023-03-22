@@ -31,9 +31,9 @@ const ElementCard = (props) => {
           "--hover-background-color": colorCategory[element.category],
         }}
       >
-        <p>{element.number}</p>
+        <h2>{element.number}</h2>
         <h1>{element.symbol}</h1>
-        <p>{element.name}</p>
+        <h2>{element.name}</h2>
       </div>
     );
   });
