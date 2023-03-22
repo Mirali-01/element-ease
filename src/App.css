@@ -34,8 +34,8 @@ code {
 }
 
 .categoryBtns{
-  /* display: grid; */
-  border: solid purple;
+  display: grid;
+  /* border: solid purple; */
 }
 
 .categoryBtns button{
@@ -45,21 +45,13 @@ code {
 
 .elementCard{
   border: solid;
-  font-size: 0.75vh;
+  font-size: 0.72vh;
   border-radius: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   line-height: 0.75vh;
 }
-
-/* .elementCard h1{
-  border: solid purple;
-}
-
-.elementCard h2{
-  border: solid peru;
-} */
 
 .elementCard:hover{
   transform: scale(1.5, 1.5);
@@ -91,4 +83,13 @@ code {
   left: 67vh;
   position: absolute;
   z-index: 1;
+  line-height: 2vh;
+}
+
+.modal h1{
+  font-size: 9vh;
+}
+
+.modal h3{
+  font-size: 4.5vh;
 }
