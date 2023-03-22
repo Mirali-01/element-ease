@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import CategoryButton from "./CategoryButton";
 import ModalContent from "./ModalContent";
 
 const ElementCard = (props) => {
@@ -52,10 +53,7 @@ const ElementCard = (props) => {
   return (
     <div>
       <div className="periodicTable">
-        <div className="categoryBtns">
-          <button>Noble Gas</button>
-          <button>Diatomic Nonmetal</button>
-        </div>
+        <div className="categoryBtns">{/* <CategoryButton /> */}</div>
         {elementName}
       </div>
       {showModal &&
