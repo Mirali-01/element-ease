@@ -6,12 +6,10 @@
 
 body {
   margin: 0;
-  /* font-family: 'Arial Rounded MT Bold'; */
   font-family: "Rockwell";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
-  /* position: relative; */
 }
 
 code {
@@ -27,8 +25,8 @@ code {
 
 .periodicTable{
   display: grid;
-  grid-template-columns: repeat(18, 60px);
-  grid-template-rows: repeat(10, 60px);
+  grid-template-columns: repeat(18, 8.8vh);
+  grid-template-rows: repeat(10, 8.8vh);
   gap: 5px;
   position: absolute;
   top: 12.5%;
@@ -63,7 +61,7 @@ code {
 .modalContainer{
   height: 100%;
   width: 100%;
-  background-color: rgba(176, 196, 222, 0.625);
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   z-index: 0;
 }
@@ -73,16 +71,14 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: whitesmoke 0px 5px 20px 0px;
-  /* background-color: mediumaquamarine; */
-  background-color: mediumslateblue;
+  box-shadow: black 0px 2px 5px 1px;
   border: 2px solid rgb(240, 240, 240);
   border-radius: 12px;
   margin: auto;
-  width: 320px;
-  top: 70px;
-  left: calc(35.5%);
-  bottom: 110px;
+  width: 50vh;
+  height: 50vh;
+  top: 15vh;
+  left: 67vh;
   position: absolute;
   z-index: 1;
 }

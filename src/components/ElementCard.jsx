@@ -3,6 +3,7 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import CategoryButton from "./CategoryButton";
 import ModalContent from "./ModalContent";
+import colorCategory from "../models/ColorCategory";
 
 const ElementCard = (props) => {
   const [showModal, setShowModal] = useState(false);
@@ -10,19 +11,6 @@ const ElementCard = (props) => {
 
   const element = props.element;
   // console.log(element);
-
-  const colorCategory = {
-    "diatomic nonmetal": "lightgreen",
-    "noble gas": "purple",
-    "alkali metal": "firebrick",
-    "alkaline earth metal": "orange",
-    metalloid: "yellowgreen",
-    "polyatomic nonmetal": "darkgreen",
-    "post-transition metal": "darkcyan",
-    "transition metal": "gray",
-    lanthanide: "deepskyblue",
-    actinide: "peru",
-  };
 
   const elementName = element.map((element, key) => {
     return (
@@ -43,7 +31,7 @@ const ElementCard = (props) => {
           "--hover-background-color": colorCategory[element.category],
         }}
       >
-        <p className="number">{element.number}</p>
+        <p>{element.number}</p>
         <h1>{element.symbol}</h1>
         <p>{element.name}</p>
       </div>
