@@ -5,24 +5,15 @@ const CategoryButton = () => {
   // use filter method to get features from hover
   // console.log(colorCategory);
 
-  // const groupColor = Object.keys(colorCategory).forEach((key) => {
-  //   // console.log(colorCategory[key]);
-  //   return (
-  //     <div className="sameCategory">
-  //       <div className="colorBox" style={{ backgroundColor: color }}></div>
-  //       <h2>{colorCategory[key]}</h2>
-  //     </div>
-  //   );
-  // });
+  const keys = Object.keys(colorCategory[0]); //can map to get all the keys
+  const values = Object.values(colorCategory[0]); //can map to get all the values
 
-  const groupColor = colorCategory.map((color) => {
-    let keys = Object.keys(colorCategory[0]).map((keys) => {
-      return <h2>{keys}</h2>;
-    });
+  const groupColor = [keys, values].map((string) => {
+    console.log(string[0]);
     return (
       <div className="sameCategory">
-        <div className="colorBox" style={{ "background-color": color }}></div>
-        {keys}
+        {/* <div className="colorBox" style={{ backgroundColor: value }}></div> */}
+        <h2>{string[0]}</h2>
       </div>
     );
   });

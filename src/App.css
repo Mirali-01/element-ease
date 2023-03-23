@@ -44,13 +44,13 @@ code {
 
 .sameCategory{
   border: solid red;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 0.5vh;
   height: 5vh;
   width: 20vh;
-  align-items: center;
+  align-items: center; */
 }
 
 .colorBox{
