@@ -21,7 +21,7 @@ const CategoryButton = () => {
     );
   });
 
-  return <div>{groupColor}</div>;
+  return <div>{/* {groupColor} */}</div>;
 };
 
 export default CategoryButton;

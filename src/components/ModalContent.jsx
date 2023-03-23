@@ -14,7 +14,7 @@ const ModalContent = ({ element, onClose }) => {
         style={{
           color: colorCategory[0][element.category],
           borderColor: colorCategory[0][element.category],
-          "background-color": "black",
+          backgroundColor: "black",
           border: "0.5vh solid",
         }}
       >

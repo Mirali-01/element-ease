@@ -34,11 +34,17 @@ code {
   left: 4%;
 }
 
+.basicInfo{
+  border: solid blue;
+  grid-column: 3 / span 4;
+  grid-row: 1 / span 3;
+}
+
 .categoryBtns{
   border: solid purple;
   grid-column: 7 / span 6;
   grid-row: 1 / span 3;
-  font-size: 1vh;
+  font-size: 0.5vh;
   color: white;
 }
 

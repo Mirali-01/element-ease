@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import CategoryButton from "./CategoryButton";
 import ModalContent from "./ModalContent";
 import colorCategory from "../models/ColorCategory";
+import BasicInfo from "./BasicInfo";
 
 const ElementCard = (props) => {
   const [showModal, setShowModal] = useState(false);
@@ -41,6 +42,7 @@ const ElementCard = (props) => {
   return (
     <div>
       <div className="periodicTable">
+        <div className="basicInfo"></div>
         <div className="categoryBtns">
           <CategoryButton />
         </div>
