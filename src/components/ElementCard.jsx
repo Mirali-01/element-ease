@@ -24,11 +24,11 @@ const ElementCard = (props) => {
         style={{
           gridRow: element.ypos,
           gridColumn: element.xpos,
-          color: colorCategory[element.category],
-          borderColor: colorCategory[element.category],
+          color: colorCategory[0][element.category],
+          borderColor: colorCategory[0][element.category],
           "--hover-color": "black",
           "--hover-border-color": "transparent",
-          "--hover-background-color": colorCategory[element.category],
+          "--hover-background-color": colorCategory[0][element.category],
         }}
       >
         <h2>{element.number}</h2>

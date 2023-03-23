@@ -9,8 +9,8 @@ const ModalContent = ({ element, onClose }) => {
       <div
         className="modal"
         style={{
-          color: colorCategory[element.category],
-          borderColor: colorCategory[element.category],
+          color: colorCategory[0][element.category],
+          borderColor: colorCategory[0][element.category],
           "background-color": "black",
           border: "0.5vh solid",
         }}

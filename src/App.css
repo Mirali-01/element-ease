@@ -36,9 +36,10 @@ code {
 
 .categoryBtns{
   border: solid purple;
-  grid-column: 4 / span 8;
+  grid-column: 7 / span 6;
   grid-row: 1 / span 3;
   font-size: 1vh;
+  color: white;
 }
 
 .sameCategory{
@@ -49,7 +50,6 @@ code {
   height: 5vh;
   width: 20vh;
   align-items: center;
-
 }
 
 .colorBox{
