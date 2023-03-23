@@ -1,20 +1,21 @@
 import React from "react";
-import { useState } from "react";
 import colorCategory from "../models/ColorCategory";
 
 const CategoryButton = () => {
-  const [button, setButton] = useState({});
   // use filter method to get features from hover
-  // const groupColor = colorCategory.map((color) => {
-  //   return (
-  //     <div className="sameCategory">
-  //       <div className="colorBox"></div>
-  //       <h2>Diatomic Nonmetal</h2>
-  //     </div>
-  //   );
-  // });
 
-  return <div></div>;
+  const groupColor = colorCategory.map((color) => {
+    let keys = Object.keys(colorCategory);
+    console.log(keys);
+    return (
+      <div className="sameCategory">
+        <div className="colorBox" style={{ backgroundColor: color }}></div>
+        <h2>{keys.map((keys) => keys)}</h2>
+      </div>
+    );
+  });
+
+  return <div>{groupColor}</div>;
 };
 
 export default CategoryButton;
