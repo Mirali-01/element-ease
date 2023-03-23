@@ -7,6 +7,9 @@ const ModalContent = ({ element, onClose }) => {
   return (
     <div className="modalContainer" onClick={onClose}>
       <div
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
         className="modal"
         style={{
           color: colorCategory[0][element.category],
