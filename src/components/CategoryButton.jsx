@@ -16,12 +16,13 @@ const CategoryButton = () => {
   // });
 
   const groupColor = colorCategory.map((color) => {
-    let keys = Object.keys(colorCategory[0]);
-    console.log(keys);
+    let keys = Object.keys(colorCategory[0]).map((keys) => {
+      return <h2>{keys}</h2>;
+    });
     return (
       <div className="sameCategory">
-        <div className="colorBox" style={{ backgroundColor: color }}></div>
-        <h2>{keys}</h2>
+        <div className="colorBox" style={{ "background-color": color }}></div>
+        {keys}
       </div>
     );
   });
