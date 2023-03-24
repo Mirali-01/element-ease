@@ -19,9 +19,17 @@ const CategoryButton = () => {
     arr.push(new Element(name, colorCategory[0][name]));
   }
 
+  // sameCategory div needs styling, make it invert like the element cards
   const groupColor = arr.map((element, key) => {
     return (
-      <div className="sameCategory" key={key}>
+      <div
+        className="sameCategory"
+        style={{
+          "--hover-color": "black",
+          "--hover-background-color": "whitesmoke",
+        }}
+        key={key}
+      >
         <div
           className="colorBox"
           style={{

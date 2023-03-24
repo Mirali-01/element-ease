@@ -10,6 +10,7 @@ const ModalContent = ({ element, onClose }) => {
         onClick={(e) => {
           e.stopPropagation();
         }}
+        // Add wikipedia link and circle icon to modal
         className="modal"
         style={{
           color: colorCategory[0][element.category],

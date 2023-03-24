@@ -35,7 +35,7 @@ code {
 }
 
 .basicInfoBox{
-  border: solid blue;
+  /* border: solid blue; */
   grid-column: 3 / span 4;
   grid-row: 1 / span 3;
 }
@@ -46,6 +46,7 @@ code {
   grid-row: 1 / span 3;
   font-size: 1vh;
   color: white;
+
 }
 
 .groupColor{
@@ -63,7 +64,13 @@ code {
   width: 22vh;
   gap: 1vh;
   text-transform: capitalize;
+  /* border-radius: 5%; */
 }
+
+/* .sameCategory:hover{
+  color:var(--hover-color) !important;
+  background-color: var(--hover-background-color) !important;
+} */
 
 .colorBox{
   border: solid;

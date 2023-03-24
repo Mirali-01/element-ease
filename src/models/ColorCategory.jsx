@@ -1,15 +1,15 @@
 const colorCategory = [
   {
-    "diatomic nonmetal": "lightgreen",
-    "noble gas": "purple",
-    "alkali metal": "firebrick",
+    "diatomic nonmetal": "yellow",
+    "noble gas": "darkviolet",
+    "alkali metal": "orangered",
     "alkaline earth metal": "orange",
     metalloid: "yellowgreen",
-    "polyatomic nonmetal": "darkgreen",
+    "polyatomic nonmetal": "lightgreen",
     "post-transition metal": "darkcyan",
-    "transition metal": "gray",
+    "transition metal": "cadetblue",
     lanthanide: "deepskyblue",
-    actinide: "peru",
+    actinide: "mediumvioletred",
   },
 ];
 
