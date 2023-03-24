@@ -62,13 +62,19 @@ code {
   height: 5vh;
   width: 22vh;
   gap: 1vh;
+  text-transform: capitalize;
 }
 
 .colorBox{
-  /* border: solid blue; */
+  border: solid;
   height: 4vh;
   width: 4vh;
   border-radius: 5%;
+}
+
+.colorBox:hover{
+  border-color: var(--hover-border-color) !important;
+  background-color: var(--hover-background-color) !important;
 }
 
 .elementCard{

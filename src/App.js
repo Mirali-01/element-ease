@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import Nav from "./components/Nav";
 import ElementCard from "./components/ElementCard";
 
 // Try to use filter for the names when inputting search
@@ -45,7 +46,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>The Periodic Table of Elements</h1>
+      <Nav />
       <ElementCard element={state} />
     </div>
   );

@@ -24,7 +24,11 @@ const CategoryButton = () => {
       <div className="sameCategory" key={key}>
         <div
           className="colorBox"
-          style={{ backgroundColor: element.color }}
+          style={{
+            borderColor: element.color,
+            "--hover-border-color": "transparent",
+            "--hover-background-color": element.color,
+          }}
         ></div>
         <h2>{element.name}</h2>
       </div>
