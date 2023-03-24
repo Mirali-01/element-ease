@@ -57,7 +57,7 @@ code {
 }
 
 .sameCategory{
-  border: solid red;
+  /* border: solid red; */
   display: flex;
   align-items: center;
   height: 5vh;

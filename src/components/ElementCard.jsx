@@ -9,6 +9,7 @@ import BasicInfo from "./BasicInfo";
 const ElementCard = (props) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedElem, setSelectedElem] = useState({});
+  const [basicInfo, setBasicInfo] = useState("");
 
   const element = props.element;
   // console.log(element);
@@ -19,7 +20,7 @@ const ElementCard = (props) => {
         className="elementCard"
         onMouseOver={() => {
           // when mouse is over the element card, basic info shows up on the BasicInfo component
-          console.log(element.name);
+          setBasicInfo(element);
         }}
         onClick={() => {
           setShowModal(true);
@@ -47,7 +48,7 @@ const ElementCard = (props) => {
     <div>
       <div className="periodicTable">
         <div className="basicInfoBox">
-          <BasicInfo />
+          <BasicInfo basicInfo={basicInfo} />
         </div>
         <div className="categoryBtns">
           <CategoryButton relatedCategory={element} />
