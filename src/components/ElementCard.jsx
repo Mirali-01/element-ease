@@ -17,6 +17,10 @@ const ElementCard = (props) => {
     return (
       <div
         className="elementCard"
+        onMouseOver={() => {
+          // when mouse is over the element card, basic info shows up on the BasicInfo component
+          console.log(element);
+        }}
         onClick={() => {
           setShowModal(true);
           setSelectedElem(element);
@@ -42,9 +46,11 @@ const ElementCard = (props) => {
   return (
     <div>
       <div className="periodicTable">
-        <div className="basicInfoBox"></div>
+        <div className="basicInfoBox">
+          <BasicInfo element={selectedElem} />
+        </div>
         <div className="categoryBtns">
-          <CategoryButton />
+          <CategoryButton relatedCategory={element} />
         </div>
         {elementName}
       </div>

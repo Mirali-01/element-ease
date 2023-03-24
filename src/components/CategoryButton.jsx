@@ -1,9 +1,8 @@
 import React from "react";
 import colorCategory from "../models/ColorCategory";
 
-const CategoryButton = () => {
+const CategoryButton = (props) => {
   // console.log(colorCategory);
-
   // Object.keys(colorCategory[0]); //can map to get all the keys
   // Object.values(colorCategory[0]); //can map to get all the values
 
@@ -21,11 +20,24 @@ const CategoryButton = () => {
 
   // sameCategory div needs styling, make it invert like the element cards
   const groupColor = arr.map((element, key) => {
+    const relatedCategory = () => {
+      // need an onclick and onclose
+      // console.log(props.relatedCategory);
+      // console.log(element.name);
+      const filterCategory = props.relatedCategory.filter((category) => {
+        return category.category === element.name;
+      });
+      console.log(filterCategory);
+    };
+
     return (
       <div
+        onClick={() => {
+          relatedCategory();
+        }}
         className="sameCategory"
         style={{
-          "--hover-color": "black",
+          // "--hover-color": "black",
           "--hover-background-color": "whitesmoke",
         }}
         key={key}

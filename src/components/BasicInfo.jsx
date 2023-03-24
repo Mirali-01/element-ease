@@ -1,6 +1,7 @@
 import React from "react";
 
-const BasicInfo = () => {
+const BasicInfo = ({ element }) => {
+  console.log(element);
   return <div>BasicInfo</div>;
 };
 
