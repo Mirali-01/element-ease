@@ -2,26 +2,36 @@ import React from "react";
 import colorCategory from "../models/ColorCategory";
 
 const CategoryButton = () => {
-  // use filter method to get features from hover
   // console.log(colorCategory);
 
-  const keys = Object.keys(colorCategory[0]); //can map to get all the keys
-  const values = Object.values(colorCategory[0]); //can map to get all the values
+  // Object.keys(colorCategory[0]); //can map to get all the keys
+  // Object.values(colorCategory[0]); //can map to get all the values
 
-  const groupColor = [keys, values].map((string, index, arr) => {
-    console.log(string);
+  class Element {
+    constructor(name, color) {
+      this.name = name;
+      this.color = color;
+    }
+  }
 
-    // console.log(arr[0]);
-    // console.log(arr[1]);
+  const arr = [];
+  for (let name in colorCategory[0]) {
+    arr.push(new Element(name, colorCategory[0][name]));
+  }
+
+  const groupColor = arr.map((element) => {
     return (
       <div className="sameCategory">
-        {/* <div className="colorBox" style={{ backgroundColor: value }}></div> */}
-        {/* <h2>{arr[0][count]}</h2> */}
+        <div
+          className="colorBox"
+          style={{ backgroundColor: element.color }}
+        ></div>
+        <h2>{element.name}</h2>
       </div>
     );
   });
 
-  return <div>{/* {groupColor} */}</div>;
+  return <div>{groupColor}</div>;
 };
 
 export default CategoryButton;

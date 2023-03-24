@@ -42,7 +42,7 @@ const ElementCard = (props) => {
   return (
     <div>
       <div className="periodicTable">
-        <div className="basicInfo"></div>
+        <div className="basicInfoBox"></div>
         <div className="categoryBtns">
           <CategoryButton />
         </div>

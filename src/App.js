@@ -32,7 +32,7 @@ function App() {
   if (loading) {
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 6500);
     return (
       <div className="loadingScreen">
         <img

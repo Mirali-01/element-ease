@@ -34,7 +34,7 @@ code {
   left: 4%;
 }
 
-.basicInfo{
+.basicInfoBox{
   border: solid blue;
   grid-column: 3 / span 4;
   grid-row: 1 / span 3;
@@ -44,25 +44,27 @@ code {
   border: solid purple;
   grid-column: 7 / span 6;
   grid-row: 1 / span 3;
-  font-size: 0.5vh;
+  font-size: 1vh;
   color: white;
+  /* display: flex; */
+  /* align-items: start; */
+  /* flex-wrap: wrap; */
 }
 
 .sameCategory{
   border: solid red;
   /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 0.5vh;
+  flex-flow: column wrap;
+  justify-content: center; */
   height: 5vh;
-  width: 20vh;
-  align-items: center; */
+  width: 22vh;
 }
 
 .colorBox{
   border: solid blue;
   height: 4vh;
   width: 4vh;
+  align-self: left;
 }
 
 .elementCard{
