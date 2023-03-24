@@ -19,9 +19,9 @@ const CategoryButton = () => {
     arr.push(new Element(name, colorCategory[0][name]));
   }
 
-  const groupColor = arr.map((element) => {
+  const groupColor = arr.map((element, key) => {
     return (
-      <div className="sameCategory">
+      <div className="sameCategory" key={key}>
         <div
           className="colorBox"
           style={{ backgroundColor: element.color }}
@@ -31,7 +31,7 @@ const CategoryButton = () => {
     );
   });
 
-  return <div>{groupColor}</div>;
+  return <div className="groupColor">{groupColor}</div>;
 };
 
 export default CategoryButton;

@@ -41,30 +41,34 @@ code {
 }
 
 .categoryBtns{
-  border: solid purple;
+  /* border: solid purple; */
   grid-column: 7 / span 6;
   grid-row: 1 / span 3;
   font-size: 1vh;
   color: white;
-  /* display: flex; */
-  /* align-items: start; */
-  /* flex-wrap: wrap; */
+}
+
+.groupColor{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 0.3vh;
 }
 
 .sameCategory{
-  border: solid red;
-  /* display: flex;
-  flex-flow: column wrap;
-  justify-content: center; */
+  /* border: solid red; */
+  display: flex;
+  align-items: center;
   height: 5vh;
   width: 22vh;
+  gap: 1vh;
 }
 
 .colorBox{
-  border: solid blue;
+  /* border: solid blue; */
   height: 4vh;
   width: 4vh;
-  align-self: left;
+  border-radius: 5%;
 }
 
 .elementCard{
