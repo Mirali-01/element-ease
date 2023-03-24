@@ -35,7 +35,7 @@ code {
 }
 
 .basicInfoBox{
-  border: solid blue;
+  /* border: solid blue; */
   grid-column: 3 / span 4;
   grid-row: 1 / span 3;
 }

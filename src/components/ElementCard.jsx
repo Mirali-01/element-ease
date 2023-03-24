@@ -45,7 +45,11 @@ const ElementCard = (props) => {
   });
 
   return (
-    <div>
+    <div
+      onMouseOut={() => {
+        setBasicInfo(false);
+      }}
+    >
       <div className="periodicTable">
         <div className="basicInfoBox">
           <BasicInfo basicInfo={basicInfo} />
