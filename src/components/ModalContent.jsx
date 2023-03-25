@@ -2,7 +2,7 @@ import React from "react";
 import colorCategory from "../models/ColorCategory";
 
 const ModalContent = ({ element, onClose }) => {
-  //   console.log(element);
+  // console.log(element);
 
   return (
     <div className="modalContainer" onClick={onClose}>

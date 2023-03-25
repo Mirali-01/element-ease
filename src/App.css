@@ -36,8 +36,18 @@ code {
 
 .basicInfoBox{
   /* border: solid blue; */
+  display: grid;
   grid-column: 3 / span 4;
   grid-row: 1 / span 3;
+}
+
+.basicInfo{
+  border: solid;
+  height: 27vh;
+  width: 27vh;
+  margin: auto;
+  border-radius: 5%;
+  box-shadow: whitesmoke 0px 1px 15px 0px;
 }
 
 .categoryBtns{
@@ -46,7 +56,6 @@ code {
   grid-row: 1 / span 3;
   font-size: 1vh;
   color: white;
-
 }
 
 .groupColor{

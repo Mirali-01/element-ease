@@ -15,6 +15,7 @@ const ElementCard = (props) => {
   // console.log(element);
 
   const elementName = element.map((element, key) => {
+    // console.log(element);
     return (
       <div
         className="elementCard"
