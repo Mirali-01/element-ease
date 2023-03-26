@@ -27,14 +27,19 @@ function App() {
   // console.log(state);
   useEffect(() => {
     getElement();
+    setTimeout(
+      () => setLoading(false),
+      7000
+      // not loading for 7s for some reason
+    );
   }, []);
 
   // displays loading before data fetched
   if (loading) {
-    setTimeout(() => {
-      setLoading(false);
-      // not loading for 7s for some reason
-    }, 7000);
+    // setTimeout(() => {
+    //   setLoading(false);
+    //   // not loading for 7s for some reason
+    // }, 7000);
     return (
       <div className="loadingScreen">
         <img

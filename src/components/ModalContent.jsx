@@ -47,7 +47,11 @@ const ModalContent = ({ element, onClose }) => {
         <h3>{element.name}</h3>
         <div className="elementModal">
           Summary <hr />
-          {element.summary}
+          <p>{element.summary}</p>
+          {/* Discovered By <hr />
+          <p>{element.discovered_by}</p>
+          Phase <hr />
+          <p>{element.phase}</p> */}
         </div>
       </div>
     </div>
