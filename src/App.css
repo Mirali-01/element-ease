@@ -41,7 +41,7 @@ code {
   align-items: center;
   position: absolute;
   width: 180vh;
-  left: 1.75%;
+  left: 1.5%;
 }
 
 /* .nav h1{
@@ -55,6 +55,7 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
   height: 7vh;
   width: 7vh;
   border-radius: 50%;
+  /* add animation where onclick the react symbol will spin */
 }
 
 .linkContainer{
