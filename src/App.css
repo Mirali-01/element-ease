@@ -30,7 +30,7 @@ code {
   gap: 0.75vh;
   position: absolute;
   top: 15%;
-  left: 1.75%;
+  left: 2.5%;
 }
 
 .nav{
@@ -41,7 +41,7 @@ code {
   align-items: center;
   position: absolute;
   width: 180vh;
-  left: 1.25%;
+  left: 2%;
 }
 
 /* .nav h1{
@@ -245,6 +245,10 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
   margin: 2vh;
   padding: 0.5vh;
   width: 40vh;
-  color: rgba(245, 245, 245, 0.821);
   text-align: center;
+  line-height: normal;
+}
+
+.moreInfo{
+  text-align: left;
 }

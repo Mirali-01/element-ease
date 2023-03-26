@@ -1,6 +1,6 @@
 const colorCategory = [
   {
-    "diatomic nonmetal": "yellow",
+    "diatomic nonmetal": "rgb(223, 223, 22)",
     "noble gas": "darkviolet",
     "alkali metal": "orangered",
     "alkaline earth metal": "orange",

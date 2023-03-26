@@ -48,10 +48,18 @@ const ModalContent = ({ element, onClose }) => {
         <div className="elementModal">
           Summary <hr />
           <p>{element.summary}</p>
-          {/* Discovered By <hr />
-          <p>{element.discovered_by}</p>
-          Phase <hr />
-          <p>{element.phase}</p> */}
+          <br />
+          <div className="moreInfo">
+            <p>
+              Atomic Mass: {Math.round(1000 * element.atomic_mass) / 1000} g/mol
+              (amu)
+            </p>
+            <p>Discovered By: {element.discovered_by}</p>
+            <p>Phase: {element.phase}</p>
+            <p style={{ "text-transform": "capitalize" }}>
+              Type: {element.category}
+            </p>
+          </div>
         </div>
       </div>
     </div>
