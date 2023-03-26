@@ -1,7 +1,6 @@
 .App {
   text-align: center;
-  color: rgba(245, 245, 245, 0.85);
-  text-decoration: underline;
+  color: rgba(245, 245, 245, 0.821);
 }
 
 body {
@@ -30,9 +29,57 @@ code {
   grid-template-rows: repeat(10, 9vh);
   gap: 0.75vh;
   position: absolute;
-  top: 12%;
-  left: 4%;
+  top: 15%;
+  left: 1.75%;
 }
+
+.nav{
+  /* border: solid; */
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  align-items: center;
+  position: absolute;
+  width: 180vh;
+  left: 1.75%;
+}
+
+/* .nav h1{
+background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+} */
+
+.placeholder img{
+  /* border: solid; */
+  height: 7vh;
+  width: 7vh;
+  border-radius: 50%;
+}
+
+.linkContainer{
+  /* border: solid; */
+  height: 7vh;
+  width: 40vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.linkContainer img {
+  padding: 0.5vh;
+  height: 6vh;
+  width: 6vh;
+  border-radius: 50%;
+  background: linear-gradient(black, black) padding-box,
+  linear-gradient(to top, dodgerblue, darkviolet) border-box;
+  border: 0.35vh solid transparent;
+}
+
+.linkContainer img:hover{
+  background: linear-gradient(black, black) padding-box,
+  linear-gradient(to top, darkviolet, dodgerblue) border-box;
+}
+
 
 .basicInfoBox{
   /* border: solid blue; */
@@ -42,19 +89,18 @@ code {
 }
 
 .basicInfo{
-  border: solid;
+  border: solid transparent;
   height: 27vh;
   width: 27vh;
   margin: auto;
   border-radius: 5%;
-  box-shadow: whitesmoke 0px 1px 15px 0px;
 }
 
 .categoryBtns{
   /* border: solid purple; */
   grid-column: 7 / span 6;
   grid-row: 1 / span 3;
-  font-size: 1vh;
+  font-size: 1.25vh;
   color: white;
 }
 
@@ -62,7 +108,7 @@ code {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 0.3vh;
+  gap: 0.25vh;
 }
 
 .sameCategory{
@@ -70,10 +116,11 @@ code {
   display: flex;
   align-items: center;
   height: 5vh;
-  width: 22vh;
+  width: 28vh;
   gap: 1vh;
   text-transform: capitalize;
-  /* border-radius: 5%; */
+  border-radius: 1.5vh;
+  color: rgba(245, 245, 245, 0.909);
 }
 
 /* .sameCategory:hover{
@@ -83,8 +130,8 @@ code {
 
 .colorBox{
   border: solid;
-  height: 4vh;
-  width: 4vh;
+  height: 3vh;
+  width: 3vh;
   border-radius: 5%;
 }
 
@@ -115,8 +162,8 @@ code {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  z-index: 0;
+  position: fixed;
+  z-index: 1;
 }
 
 .modal {

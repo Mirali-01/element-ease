@@ -19,9 +19,11 @@ const ModalContent = ({ element, onClose }) => {
           border: "0.5vh solid",
         }}
       >
-        <h3>{element.number}</h3>
+        {/* <div className="elementModal"></div> */}
+        {/* Hiding overflow and add overflow scroll for more element info */}
+        {/* <h3>{element.number}</h3>
         <h1>{element.symbol}</h1>
-        <h3>{element.name}</h3>
+        <h3>{element.name}</h3> */}
       </div>
     </div>
   );
