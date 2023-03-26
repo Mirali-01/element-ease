@@ -5,16 +5,20 @@ export const Nav = () => {
     <div className="nav">
       <div className="placeholder">
         <img
-          src="https://media0.giphy.com/media/RJzm826vu7WbJvBtxX/giphy.gif?cid=6c09b952f51b7c4ad83aae7a1012e0b1b3c1b2ca35fafd3c&rid=giphy.gif&ct=s"
-          alt="gif"
+          src="https://icons-for-free.com/iconfiles/png/512/design+development+facebook+framework+mobile+react+icon-1320165723839064798.png"
+          alt="React"
         />
       </div>
       <h1>The Periodic Table of Elements</h1>
       <div className="linkContainer">
-        <a href="https://github.com/Mirali-01">
+        <a href="https://github.com/Mirali-01" target="_blank" rel="noreferrer">
           <img src="https://img.icons8.com/nolan/512/github.png" alt="Github" />
         </a>
-        <a href="https://www.linkedin.com/in/mir-mali/">
+        <a
+          href="https://www.linkedin.com/in/mir-mali/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img
             src="https://visualpharm.com/assets/852/Linkedin-595b40b65ba036ed117d4495.svg"
             alt="LinkedIn"

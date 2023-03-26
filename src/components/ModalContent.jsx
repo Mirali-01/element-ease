@@ -6,11 +6,23 @@ const ModalContent = ({ element, onClose }) => {
 
   return (
     <div className="modalContainer" onClick={onClose}>
+      <h1
+        className="modalHeader"
+        style={{ color: colorCategory[0][element.category] }}
+      >
+        Scroll Down For More Information
+      </h1>
+      <div className="downArrow">
+        <img
+          src="https://happyinvites.co/wp-content/uploads/2022/04/Arrow-Pointing-Down.gif"
+          alt=""
+        />
+      </div>
+
       <div
         onClick={(e) => {
           e.stopPropagation();
         }}
-        // Add wikipedia link and circle icon to modal
         className="modal"
         style={{
           color: colorCategory[0][element.category],
@@ -19,11 +31,24 @@ const ModalContent = ({ element, onClose }) => {
           border: "0.5vh solid",
         }}
       >
-        {/* <div className="elementModal"></div> */}
         {/* Hiding overflow and add overflow scroll for more element info */}
-        {/* <h3>{element.number}</h3>
+        <div className="imgBox">
+          <a href={element.source} target="_blank" rel="noreferrer">
+            <img
+              style={{ borderColor: colorCategory[0][element.category] }}
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968992.png"
+              alt=""
+            />
+          </a>
+        </div>
+
+        <h3>{element.number}</h3>
         <h1>{element.symbol}</h1>
-        <h3>{element.name}</h3> */}
+        <h3>{element.name}</h3>
+        <div className="elementModal">
+          Summary <hr />
+          {element.summary}
+        </div>
       </div>
     </div>
   );

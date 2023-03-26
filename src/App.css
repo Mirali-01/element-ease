@@ -50,12 +50,28 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
 -webkit-text-fill-color: transparent;
 } */
 
-.placeholder img{
-  /* border: solid; */
-  height: 7vh;
-  width: 7vh;
-  border-radius: 50%;
-  /* add animation where onclick the react symbol will spin */
+.placeholder{
+  padding: 1vh;
+}
+
+  .placeholder img{
+    border: solid;
+    height: 8.5vh;
+    width: 8.5vh;
+    border-radius: 50%;
+    animation: placeholder-spin infinite 5s linear;
+    background: linear-gradient(black, black) padding-box,
+    linear-gradient(to top, dodgerblue, darkviolet) border-box;
+    border: 0.35vh solid transparent;
+  }
+
+@keyframes placeholder-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .linkContainer{
@@ -167,21 +183,50 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
   z-index: 1;
 }
 
+.modalHeader{
+  text-align: center;
+  font-size: 6vh;
+}
+
+.downArrow{
+  /* border: solid white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.downArrow img{
+  /* border: solid whitesmoke; */
+  height: 7.5vh;
+  width: 7.5vh;
+  border-radius: 50%;
+}
+
 .modal {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   box-shadow: whitesmoke 0px 1px 15px 0px;
   border-radius: 12px;
   margin: auto;
   width: 50vh;
   height: 50vh;
-  top: 15vh;
-  left: 67vh;
+  top: 25vh;
+  left: 67.5vh;
   position: absolute;
   z-index: 1;
   line-height: 2vh;
+  overflow: scroll;
+}
+
+.modal img{
+  margin: 2vh;
+  padding: 0.25vh;
+  border: 3px solid;
+  box-shadow: whitesmoke 0px 1px 15px 0px;
+  height: 6vh;
+  width: 6vh;
+  border-radius: 50%;
 }
 
 .modal h1{
@@ -190,4 +235,16 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
 
 .modal h3{
   font-size: 4.5vh;
+}
+
+.elementModal{
+  /* border: solid white; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  margin: 2vh;
+  padding: 0.5vh;
+  width: 40vh;
+  color: rgba(245, 245, 245, 0.821);
+  text-align: center;
 }

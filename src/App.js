@@ -33,7 +33,8 @@ function App() {
   if (loading) {
     setTimeout(() => {
       setLoading(false);
-    }, 6500);
+      // not loading for 7s for some reason
+    }, 7000);
     return (
       <div className="loadingScreen">
         <img
