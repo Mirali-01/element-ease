@@ -20,26 +20,20 @@ function App() {
         return element;
       })
     );
-    // Allows us to grab data before rendering it
-    setLoading(false);
   };
 
   // console.log(state);
   useEffect(() => {
     getElement();
     setTimeout(
+      // Allows us to grab data before rendering it
       () => setLoading(false),
-      7000
-      // not loading for 7s for some reason
+      6000
     );
   }, []);
 
   // displays loading before data fetched
   if (loading) {
-    // setTimeout(() => {
-    //   setLoading(false);
-    //   // not loading for 7s for some reason
-    // }, 7000);
     return (
       <div className="loadingScreen">
         <img
