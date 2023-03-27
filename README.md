@@ -1,6 +1,6 @@
 # The Periodic Table of Elements
 
-## Created by Curiousity! Rendered by React! & Powered by the Progress of People!
+### Created by Curiousity! Rendered by React! & Powered by the Progress of People!
 
 **<a href="https://dynamicchemistry.netlify.app" target="_blank">Check Out the Site!</a>**
 
