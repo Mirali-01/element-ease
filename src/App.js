@@ -28,7 +28,7 @@ function App() {
     setTimeout(
       // Allows us to grab data before rendering it
       () => setLoading(false),
-      6000
+      4000
     );
   }, []);
 

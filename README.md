@@ -2,9 +2,7 @@
 
 ## Created by Curiousity! Rendered by React! & Powered by the Progress of People!
 
-Website link will appear before the presentation.
-
-**[Check Out the Site!](https://dynamicchemistry.netlify.app)**
+**<a href="https://dynamicchemistry.netlify.app" target="_blank">Check Out the Site!</a>**
 
 An colorful and interactive way to learn about the chemical elements that make up our weird universe.
 
