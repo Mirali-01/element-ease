@@ -6,6 +6,7 @@ const CategoryButton = (props) => {
   // Object.keys(colorCategory[0]); //can map to get all the keys
   // Object.values(colorCategory[0]); //can map to get all the values
 
+  // isolating the name and color from element
   class Element {
     constructor(name, color) {
       this.name = name;
@@ -13,6 +14,7 @@ const CategoryButton = (props) => {
     }
   }
 
+  // pushing only category names and colors objects into one element object
   const arr = [];
   for (let name in colorCategory[0]) {
     arr.push(new Element(name, colorCategory[0][name]));
@@ -25,6 +27,7 @@ const CategoryButton = (props) => {
       // console.log(props.relatedCategory);
       // console.log(element.name);
       const filterCategory = props.relatedCategory.filter((category) => {
+        // all elements with the same category
         return category.category === element.name;
       });
       console.log(filterCategory);

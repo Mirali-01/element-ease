@@ -24,15 +24,19 @@ const ElementCard = (props) => {
           setBasicInfo(element);
         }}
         onClick={() => {
+          // modal pops up
           setShowModal(true);
           setSelectedElem(element);
         }}
         key={key}
         style={{
+          // api gives positions
           gridRow: element.ypos,
           gridColumn: element.xpos,
+          // color map
           color: colorCategory[0][element.category],
           borderColor: colorCategory[0][element.category],
+          // on hover colors
           "--hover-color": "black",
           "--hover-border-color": "transparent",
           "--hover-background-color": colorCategory[0][element.category],
@@ -52,14 +56,17 @@ const ElementCard = (props) => {
       }}
     >
       <div className="periodicTable">
+        {/* enlarged element display */}
         <div className="basicInfoBox">
           <BasicInfo basicInfo={basicInfo} />
         </div>
+        {/* key for element category */}
         <div className="categoryBtns">
           <CategoryButton relatedCategory={element} />
         </div>
         {elementName}
       </div>
+      {/* modal is child component of ElementCard and displays to body of document, only changing the physical placement of the DOM node, in this case to body of doc*/}
       {showModal &&
         createPortal(
           <ModalContent
