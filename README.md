@@ -14,6 +14,6 @@ Learn some interesting facts about each element and enjoy the cool features that
 - A color-coordinated key showing the types of elements that exist on earth
 - A display to show an enlarged version of each element as you hover over them
 - A modal which displays more information on the element that was clicked
-- My favorite feature: A spinning React icon on the top-left of the screen, just look at that thing go!
+- My favorite feature: A spinning React icon on the top-left corner of the screen, just look at that thing go!
 
 [Periodic Table of Elements API Link](https://kineticzephyr.onrender.com/periodictable/)
