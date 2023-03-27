@@ -4,7 +4,7 @@
 
 **<a href="https://dynamicchemistry.netlify.app" target="_blank">Check Out the Site!</a>**
 
-An colorful and interactive way to learn about the chemical elements that make up our weird universe.
+A colorful and interactive way to learn about the chemical elements that make up our weird universe.
 
 Learn some interesting facts about each element and enjoy the cool features that come with the site.
 
@@ -15,3 +15,5 @@ Learn some interesting facts about each element and enjoy the cool features that
 - A display to show an enlarged version of each element as you hover over them
 - A modal which displays more information on the element that was clicked
 - My favorite feature: A spinning React icon on the top-left of the screen, just look at that thing go!
+
+[Periodic Table of Elements API Link](https://kineticzephyr.onrender.com/periodictable/)
