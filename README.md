@@ -4,13 +4,13 @@
 
 Website link will appear before the presentation.
 
-<!-- **[Check Out the Site!](https://dynamicchemistry.netlify.app)** -->
+**[Check Out the Site!](https://dynamicchemistry.netlify.app)**
 
 An colorful and interactive way to learn about the chemical elements that make up our weird universe.
 
 Learn some interesting facts about each element and enjoy the cool features that come with the site.
 
-Features Include:
+### Features Include:
 
 - Every natural and theoretical element that is currently known
 - A color-coordinated key showing the types of elements that exist on earth
@@ -18,4 +18,4 @@ Features Include:
 - A modal which displays more information on the element that was clicked
 - My favorite feature: A spinning React icon on the top-left of the screen, just look at that thing go!
 
-No pictures of the site, be surprised!
+**No pictures of the site, be surprised!**
