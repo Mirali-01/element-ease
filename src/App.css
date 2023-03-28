@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   color: rgba(245, 245, 245, 0.821);
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -30,7 +32,7 @@ code {
   gap: 0.75vh;
   position: absolute;
   top: 15%;
-  left: 2.5%;
+  left: 3%;
 }
 
 .nav{
@@ -41,7 +43,7 @@ code {
   align-items: center;
   position: absolute;
   width: 180vh;
-  left: 2%;
+  left: 2.5%;
 }
 
 /* .nav h1{
