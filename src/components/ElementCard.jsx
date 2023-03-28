@@ -5,6 +5,7 @@ import CategoryButton from "./CategoryButton";
 import ModalContent from "./ModalContent";
 import colorCategory from "../models/ColorCategory";
 import BasicInfo from "./BasicInfo";
+import Nav from "./Nav";
 
 const ElementCard = (props) => {
   const [showModal, setShowModal] = useState(false);
@@ -31,7 +32,7 @@ const ElementCard = (props) => {
         key={key}
         style={{
           // api gives positions
-          gridRow: element.ypos,
+          gridRow: element.ypos + 2,
           gridColumn: element.xpos,
           // color map
           color: colorCategory[0][element.category],
@@ -51,11 +52,13 @@ const ElementCard = (props) => {
 
   return (
     <div
+      className="mid"
       onMouseOut={() => {
         setBasicInfo(false);
       }}
     >
       <div className="periodicTable">
+        <Nav />
         {/* enlarged element display */}
         <div className="basicInfoBox">
           <BasicInfo basicInfo={basicInfo} />

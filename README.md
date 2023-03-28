@@ -19,3 +19,11 @@ Learn some interesting facts about each element and enjoy the cool features that
 Note: Currently only Desktop compatible
 
 [Periodic Table of Elements API Link](https://kineticzephyr.onrender.com/periodictable/)
+
+<!--
+category buttons need to work
+screen sizing problem
+modal feature upgrade, make it more stylish and more info
+need wiki photos for each element
+dropdown menu with selections
+ -->
