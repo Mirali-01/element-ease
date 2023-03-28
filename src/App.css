@@ -116,7 +116,7 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
   /* border: solid blue; */
   display: grid;
   grid-column: 3 / span 4;
-  grid-row: 1 / span 3;
+  grid-row: 3 / span 3;
 }
 
 .basicInfo{
@@ -130,7 +130,7 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
 .categoryBtns{
   /* border: solid purple; */
   grid-column: 7 / span 6;
-  grid-row: 1 / span 3;
+  grid-row: 3 / span 3;
   font-size: 1.25vh;
   color: white;
 }

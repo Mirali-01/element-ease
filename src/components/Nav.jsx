@@ -2,7 +2,6 @@ import React from "react";
 
 export const Nav = () => {
   return (
-    // <div className="navContainer">
     <div className="nav">
       <div className="placeholder">
         <img
@@ -33,7 +32,6 @@ export const Nav = () => {
         </a>
       </div>
     </div>
-    // </div>
   );
 };
 

@@ -1,6 +1,5 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-// import Nav from "./components/Nav";
 import ElementCard from "./components/ElementCard";
 
 function App() {
@@ -45,7 +44,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Nav /> */}
       <ElementCard element={state} />
     </div>
   );
