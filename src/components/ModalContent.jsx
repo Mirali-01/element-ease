@@ -31,7 +31,6 @@ const ModalContent = ({ element, onClose }) => {
           border: "0.5vh solid",
         }}
       >
-        {/* Hiding overflow and add overflow scroll for more element info */}
         <div className="imgBox">
           <a href={element.source} target="_blank" rel="noreferrer">
             <img

@@ -42,7 +42,7 @@ code {
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  width: 180vh;
+  width: 178vh;
   font-size: 18px;
 }
 
@@ -63,7 +63,7 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
     border-radius: 50%;
     animation: placeholder-spin infinite 5s linear;
     background: linear-gradient(black, black) padding-box,
-    linear-gradient(to top, dodgerblue, darkviolet) border-box;
+    linear-gradient(dodgerblue, darkgoldenrod, darkviolet) border-box;
     border: 0.35vh solid transparent;
   }
 
@@ -102,7 +102,7 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
 
 .basicInfoBox{
   /* border: solid blue; */
-  font-size: 2.5vh;
+  font-size: 2.35vh;
   display: grid;
   grid-column: 3 / span 4;
   grid-row: 3 / span 3;
@@ -226,10 +226,13 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
   margin: 2vh;
   padding: 0.25vh;
   border: 3px solid;
-  box-shadow: whitesmoke 0px 1px 15px 0px;
   height: 6vh;
   width: 6vh;
   border-radius: 50%;
+}
+
+.modal img:hover{
+  box-shadow: whitesmoke 0px 1px 15px 0px;
 }
 
 .modal h1{
@@ -242,9 +245,6 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
 
 .elementModal{
   /* border: solid white; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   margin: 2vh;
   padding: 0.5vh;
   width: 40vh;
