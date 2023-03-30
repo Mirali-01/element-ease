@@ -18,16 +18,21 @@ function App() {
         return element;
       })
     );
-  };
-
-  // console.log(state);
-  useEffect(() => {
-    getElement();
     setTimeout(
       // Allows us to grab data before rendering it
       () => setLoading(false),
       4000
     );
+  };
+
+  // console.log(state);
+  useEffect(() => {
+    getElement();
+    // setTimeout(
+    //   // Allows us to grab data before rendering it
+    //   () => setLoading(false),
+    //   4000
+    // );
   }, []);
 
   // displays loading before data fetched
