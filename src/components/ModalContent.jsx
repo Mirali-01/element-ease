@@ -63,6 +63,10 @@ const ModalContent = ({ element, onClose }) => {
                 Type: {element.category}
               </p>
               <p>
+                Ionization Energies:{" "}
+                <strong>{element.ionization_energies[0]} kJ/mol</strong>
+              </p>
+              <p>
                 Density:{" "}
                 <strong>
                   {element.density} g/cm<sup>3</sup>
