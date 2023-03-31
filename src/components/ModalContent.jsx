@@ -51,13 +51,26 @@ const ModalContent = ({ element, onClose }) => {
             <br />
             <div className="moreInfo">
               <p>
-                Atomic Mass: {Math.round(1000 * element.atomic_mass) / 1000}{" "}
-                g/mol (amu)
+                Atomic Mass:{" "}
+                <strong>
+                  {Math.round(1000 * element.atomic_mass) / 1000}
+                  g/mol (amu)
+                </strong>
               </p>
               <p>Discovered By: {element.discovered_by}</p>
               <p>Phase: {element.phase}</p>
               <p style={{ "text-transform": "capitalize" }}>
                 Type: {element.category}
+              </p>
+              <p>
+                Density:{" "}
+                <strong>
+                  {element.density} g/cm<sup>3</sup>
+                </strong>
+              </p>
+              <p>
+                Electron Configuration:{" "}
+                <strong>{element.electron_configuration}</strong>
               </p>
             </div>
           </div>

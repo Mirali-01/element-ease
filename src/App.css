@@ -138,7 +138,7 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
 }
 
 .sameCategory{
-  /* border: solid red; */
+  /* border: solid red;  */
   display: flex;
   align-items: center;
   height: 5vh;
@@ -221,7 +221,7 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
 .modal img{
   margin: 2vh;
   padding: 0.25vh;
-  border: 0.5vh solid;
+  border: 0.40vh solid;
   height: 6vh;
   width: 6vh;
   border-radius: 50%;
