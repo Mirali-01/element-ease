@@ -35,6 +35,7 @@ const ModalContent = ({ element, onClose }) => {
           <div className="imgBox">
             <a href={element.source} target="_blank" rel="noreferrer">
               <img
+                className="wiki"
                 style={{ borderColor: colorCategory[0][element.category] }}
                 src="https://cdn-icons-png.flaticon.com/512/5968/5968992.png"
                 alt=""
@@ -59,12 +60,13 @@ const ModalContent = ({ element, onClose }) => {
               </p>
               <p>Discovered By: {element.discovered_by}</p>
               <p>Phase: {element.phase}</p>
-              <p style={{ "text-transform": "capitalize" }}>
+              <p style={{ textTransform: "capitalize" }}>
                 Type: {element.category}
               </p>
               <p>
                 Ionization Energies:{" "}
                 <strong>{element.ionization_energies[0]} kJ/mol</strong>
+                {/* add dropdown converter for eV*/}
               </p>
               <p>
                 Density:{" "}
@@ -76,6 +78,11 @@ const ModalContent = ({ element, onClose }) => {
                 Electron Configuration:{" "}
                 <strong>{element.electron_configuration}</strong>
               </p>
+              <img
+                className="spectral"
+                src={element.spectral_img}
+                alt="Spectra"
+              />
             </div>
           </div>
         </div>

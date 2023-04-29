@@ -12,6 +12,8 @@ const ElementCard = (props) => {
   const [selectedElem, setSelectedElem] = useState({});
   const [basicInfo, setBasicInfo] = useState("");
 
+  // Making a button to see if element cards will change style
+
   const element = props.element;
   // console.log(element);
 
@@ -35,8 +37,19 @@ const ElementCard = (props) => {
           gridRow: element.ypos + 2,
           gridColumn: element.xpos,
           // color map
+          // How to switch out styles for category button click
+          //---------------------------
+          // categoryStyle: {
+          //   color: "black",
+          //   borderColor: "transparent",
+          //   backgroundColor: colorCategory[0][element.category],
+          // },
+          // OGStyle: {
           color: colorCategory[0][element.category],
           borderColor: colorCategory[0][element.category],
+          backgroundColor: "transparent",
+          // },
+          //---------------------------
           // on hover colors
           "--hover-color": "black",
           "--hover-border-color": "transparent",

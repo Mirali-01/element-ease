@@ -5,8 +5,8 @@ const CategoryButton = (props) => {
   // console.log(colorCategory);
   // Object.keys(colorCategory[0]); //can map to get all the keys
   // Object.values(colorCategory[0]); //can map to get all the values
-
   // isolating the name and color from element
+
   class Element {
     constructor(name, color) {
       this.name = name;
@@ -32,7 +32,6 @@ const CategoryButton = (props) => {
       });
       console.log(filterCategory);
     };
-
     return (
       <div
         onClick={() => {

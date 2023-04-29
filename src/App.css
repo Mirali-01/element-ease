@@ -218,7 +218,7 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
   overflow: scroll;
 }
 
-.modal img{
+.wiki{
   margin: 2vh;
   padding: 0.25vh;
   border: 0.40vh solid;
@@ -227,7 +227,7 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
   border-radius: 50%;
 }
 
-.modal img:hover{
+.wiki:hover{
   box-shadow: whitesmoke 0px 1px 15px 0px;
 }
 
@@ -250,4 +250,10 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
 
 .moreInfo{
   text-align: left;
+}
+
+.spectral{
+  border: solid;
+  height: 20vh;
+  width: 40vh;
 }

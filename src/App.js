@@ -55,3 +55,5 @@ function App() {
 }
 
 export default App;
+
+// Checkboxes and filter ctgy btns
