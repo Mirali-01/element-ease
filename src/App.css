@@ -180,6 +180,7 @@ background: linear-gradient(to top, deepskyblue 0%, darkorchid 70%);
   color:var(--hover-color) !important;
   border-color: var(--hover-border-color) !important;
   background-color: var(--hover-background-color) !important;
+  cursor: pointer;
 }
 
 .modalContainer{

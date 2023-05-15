@@ -78,11 +78,6 @@ const ModalContent = ({ element, onClose }) => {
                 Electron Configuration:{" "}
                 <strong>{element.electron_configuration}</strong>
               </p>
-              <img
-                className="spectral"
-                src={element.spectral_img}
-                alt="Spectra"
-              />
             </div>
           </div>
         </div>
