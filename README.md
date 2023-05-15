@@ -16,8 +16,6 @@ Learn some interesting facts about each element and enjoy the cool features that
 - A modal which displays more information on the element that was clicked
 - My favorite feature: A spinning React icon on the top-left corner of the screen, just look at that thing go!
 
-Note: Currently only Desktop compatible
-
 [Periodic Table of Elements API Link](https://kineticzephyr.onrender.com/periodictable/)
 
 <!--
