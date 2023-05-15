@@ -1,7 +1,22 @@
 import React from "react";
+// import { useState } from "react";
 import colorCategory from "../models/ColorCategory";
 
 const CategoryButton = (props) => {
+  // const [colorBox, setColorBox] = useState({
+  //   border: "0.25vh solid",
+  //   height: "3vh",
+  //   width: "3vh",
+  //   "border-radius": "10%",
+  // });
+
+  // const boxHover = () => {
+  //   setColorBox({
+  //     ...colorBox,
+  //     borderColor: "var(--hover-border-color) !important",
+  //     backgroundColor: "var(--hover-background-color) !important",
+  //   });
+  // };
   // console.log(colorCategory);
   // Object.keys(colorCategory[0]); //can map to get all the keys
   // Object.values(colorCategory[0]); //can map to get all the values
@@ -34,25 +49,33 @@ const CategoryButton = (props) => {
     };
     return (
       <div
-        onClick={() => {
-          relatedCategory();
-        }}
-        className="sameCategory"
+        className="categoryHolder"
         style={{
-          // "--hover-color": "black",
-          "--hover-background-color": "whitesmoke",
+          color: element.color,
+          "--hover-background-color": element.color,
+          "--hover-color": "black",
         }}
-        key={key}
       >
         <div
-          className="colorBox"
-          style={{
-            borderColor: element.color,
-            "--hover-border-color": "transparent",
-            "--hover-background-color": element.color,
+          onClick={() => {
+            relatedCategory();
           }}
-        ></div>
-        <h2>{element.name}</h2>
+          // onMouseOver={boxHover}
+          className="sameCategory"
+          key={key}
+        >
+          <div
+            className="colorBox"
+            // style={colorBox}
+            // onMouseOver={boxHover}
+            style={{
+              borderColor: element.color,
+              "--hover-border-color": "black",
+              "--hover-background-color": element.color,
+            }}
+          ></div>
+          <h2>{element.name}</h2>
+        </div>
       </div>
     );
   });
