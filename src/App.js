@@ -12,20 +12,19 @@ function App() {
     );
     let data = await response.json();
     data = data.data;
-    // data.length = 20;
     setState(
       data.map((element) => {
         return element;
       })
     );
-    setTimeout(
-      // Allows us to grab data before rendering it
-      () => setLoading(false),
-      2500
-    );
+    setLoading(false);
+    // setTimeout(
+    //   // Allows us to grab data before rendering it
+    //   () => setLoading(false),
+    //   2500
+    // );
   };
 
-  // console.log(state);
   useEffect(() => {
     getElement();
   }, []);
@@ -50,5 +49,3 @@ function App() {
 }
 
 export default App;
-
-// Checkboxes and filter ctgy btns

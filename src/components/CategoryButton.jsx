@@ -1,12 +1,8 @@
 import React from "react";
-// import { useState } from "react";
 import colorCategory from "../models/ColorCategory";
 
 const CategoryButton = (props) => {
   // console.log(colorCategory);
-  // Object.keys(colorCategory[0]); //can map to get all the keys
-  // Object.values(colorCategory[0]); //can map to get all the values
-  // isolating the name and color from element
 
   class Element {
     constructor(name, color) {
@@ -21,12 +17,8 @@ const CategoryButton = (props) => {
     arr.push(new Element(name, colorCategory[0][name]));
   }
 
-  // sameCategory div needs styling, make it invert like the element cards
   const groupColor = arr.map((element, key) => {
     const relatedCategory = () => {
-      // need an onclick and onclose
-      // console.log(props.relatedCategory);
-      // console.log(element.name);
       const filterCategory = props.relatedCategory.filter((category) => {
         // all elements with the same category
         return category.category === element.name;
@@ -36,12 +28,12 @@ const CategoryButton = (props) => {
     return (
       <div
         className="categoryHolder"
-        onMouseOver={() => {}}
         style={{
           color: element.color,
           "--hover-background-color": element.color,
           "--hover-color": "black",
         }}
+        key={key}
       >
         <div
           onClick={() => {
