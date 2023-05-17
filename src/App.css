@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  color: rgba(245, 245, 245, 0.821);
+  /* color: rgba(245, 245, 245, 0.821); */
+  color: rgb(207, 215, 215)
 }
 
 body {
@@ -126,7 +127,6 @@ background-clip: text;
   grid-column: 7 / span 6;
   grid-row: 3 / span 3;
   font-size: 1.25vh;
-  color: white;
 }
 
 .groupColor{
@@ -171,7 +171,7 @@ background-clip: text;
 
 .colorBox:hover{
   border-color: var(--hover-border-color) !important;
-  background-color: var(--hover-background-color) !important;
+  /* background-color: var(--hover-background-color) !important; */
 }
 
 .elementCard{

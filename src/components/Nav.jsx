@@ -30,6 +30,12 @@ export const Nav = () => {
             alt="Email"
           />
         </a>
+        {/* <div className=""></div>
+        <img
+          
+          src="https://ps.w.org/dark-mode-for-wp-dashboard/assets/icon-256x256.png?rev=2404672"
+          alt="darkMode"
+        /> */}
       </div>
     </div>
   );
