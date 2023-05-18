@@ -1,7 +1,7 @@
 import React from "react";
 import colorCategory from "../models/ColorCategory";
 
-const CategoryButton = (props, { updateParentStyle }) => {
+const CategoryButton = (props, { updateElementStyle }) => {
   class Element {
     constructor(name, color) {
       this.name = name;
@@ -22,28 +22,33 @@ const CategoryButton = (props, { updateParentStyle }) => {
         "--color": "black",
         backgroundColor: colorCategory[0][element.category],
       };
-      updateParentStyle(categoryStyle);
+      updateElementStyle(categoryStyle);
     };
 
-    const handleCategoryUnhover = () => {
-      const categoryStyle = {
-        "--color": colorCategory[0][element.category],
-        "--hover-background-color": colorCategory[0][element.category],
-      };
-      updateParentStyle(categoryStyle);
-    };
+    // const handleCategoryUnhover = () => {
+    //   const categoryStyle = {
+    //     "--color": colorCategory[0][element.category],
+    //     "--hover-background-color": colorCategory[0][element.category],
+    //   };
+    //   updateElementStyle(categoryStyle);
+    // };
     const relatedCategory = () => {
       const filterCategory = props.relatedCategory.filter((category) => {
         // all elements with the same category
         return category.category === element.name;
       });
+      console.log(props);
       console.log(filterCategory);
     };
     return (
       <div
         className="categoryHolder"
-        // onMouseEnter={() => handleCategoryHover()}
-        // onMouseLeave={() => handleCategoryUnhover()}
+        onMouseOver={() => {
+          if (true) {
+            handleCategoryHover();
+          }
+        }}
+        // onMouseOut={() => handleCategoryUnhover()}
         style={{
           "--color": element.color,
           "--hover-background-color": element.color,

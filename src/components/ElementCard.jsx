@@ -11,9 +11,14 @@ const ElementCard = (props) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedElem, setSelectedElem] = useState({});
   const [basicInfo, setBasicInfo] = useState("");
+  const [elementStyle, setElementStyle] = useState({});
 
   const element = props.element;
   // console.log(element);
+
+  const updateElementStyle = (categoryStyle) => {
+    setElementStyle({ ...elementStyle, ...categoryStyle });
+  };
 
   const elementName = element.map((element, key) => {
     const categoryHoverStyle = {
@@ -72,7 +77,7 @@ const ElementCard = (props) => {
         <div className="categoryBtns">
           <CategoryButton
             relatedCategory={element}
-            // updateParentStyle={updateParentStyle}
+            updateElementStyle={updateElementStyle}
           />
         </div>
         {elementName}
