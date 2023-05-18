@@ -1,7 +1,5 @@
 .App {
   text-align: center;
-  /* color: rgba(245, 245, 245, 0.821); */
-  color: rgb(207, 215, 215)
 }
 
 body {
@@ -10,11 +8,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 .loadingScreen{
@@ -27,13 +20,11 @@ code {
 }
 
 .mid{
-  /* border: solid; */
   width: 175vh;
   margin: auto;
 }
 
 .periodicTable{
-  /* border: solid purple; */
   display: grid;
   grid-template-columns: repeat(18, 9vh);
   grid-template-rows: repeat(10, 9vh);
@@ -43,21 +34,14 @@ code {
 }
 
 .nav{
-  /* border: solid; */
   display: flex;
   justify-content: space-around;
   align-items: center;
   position: absolute;
   width: 175vh;
   font-size: 3vh;
+  color: rgb(207, 215, 215)
 }
-
-/* .nav h1{
-background: linear-gradient(to right, rgb(223, 223, 22) 0%, orangered 10%, orange 20%, darkviolet 30%,  yellowgreen 40%, lightgreen 50%, darkcyan 60%, cadetblue 70%, deepskyblue 80%, mediumvioletred 90%, rgb(223, 223, 22) 100%);
-background: linear-gradient(to right, dodgerblue, darkgoldenrod, darkviolet);
-background-clip: text;
--webkit-text-fill-color: transparent;
-} */
 
 .placeholder{
   padding: 1vh;
@@ -84,7 +68,6 @@ background-clip: text;
 }
 
 .linkContainer{
-  /* border: solid; */
   height: 7vh;
   width: 40vh;
   display: flex;
@@ -107,7 +90,6 @@ background-clip: text;
 }
 
 .basicInfoBox{
-  /* border: solid blue; */
   font-size: 2.35vh;
   display: grid;
   grid-column: 3 / span 4;
@@ -123,14 +105,12 @@ background-clip: text;
 }
 
 .categoryBtns{
-  /* border: solid purple; */
   grid-column: 7 / span 6;
   grid-row: 3 / span 3;
   font-size: 1.25vh;
 }
 
 .groupColor{
-  /* border: solid green; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -142,16 +122,15 @@ background-clip: text;
   justify-content: center;
   width: 28vh;
   border-radius: 1.5vh;
-  /* color: rgba(245, 245, 245, 0.909); */
+  color: var(--color);
 }
 
 .categoryHolder:hover{
-  color:var(--hover-color) !important;
-  background-color: var(--hover-background-color) !important;
+  color: black;
+  background-color: var(--hover-background-color)
 }
 
 .sameCategory{
-  /* border: solid red;  */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -163,15 +142,10 @@ background-clip: text;
 }
 
 .colorBox{
-  border: 0.25vh solid;
+  border: 0.25vh black solid;
   height: 3vh;
   width: 3vh;
   border-radius: 10%;
-}
-
-.colorBox:hover{
-  border-color: var(--hover-border-color) !important;
-  /* background-color: var(--hover-background-color) !important; */
 }
 
 .elementCard{
@@ -181,13 +155,16 @@ background-clip: text;
   display: flex;
   flex-direction: column;
   line-height: 0.75vh;
+  background-color: transparent;
+  color: var(--color);
+  border-color: var(--border-color)
 }
 
 .elementCard:hover{
   transform: scale(1.5, 1.5);
-  color:var(--hover-color) !important;
-  border-color: var(--hover-border-color) !important;
-  background-color: var(--hover-background-color) !important;
+  color: black;
+  border-color: transparent;
+  background-color: var(--hover-background-color);
   cursor: pointer;
 }
 
@@ -208,7 +185,6 @@ background-clip: text;
 }
 
 .downArrow img{
-  /* border: solid whitesmoke; */
   height: 7.5vh;
   width: 7.5vh;
   border-radius: 50%;
@@ -249,7 +225,6 @@ background-clip: text;
 }
 
 .elementModal{
-  /* border: solid white; */
   margin: 2vh;
   padding: 0.5vh;
   width: 40vh;
@@ -259,10 +234,4 @@ background-clip: text;
 
 .moreInfo{
   text-align: left;
-}
-
-.spectral{
-  border: solid;
-  height: 20vh;
-  width: 40vh;
 }

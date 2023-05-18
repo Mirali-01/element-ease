@@ -16,7 +16,17 @@ const ElementCard = (props) => {
   // console.log(element);
 
   const elementName = element.map((element, key) => {
-    // console.log(element);
+    const categoryHoverStyle = {
+      transform: "scale(1,1)",
+      "--color": "black",
+      backgroundColor: colorCategory[0][element.category],
+    };
+
+    const elementStyle = {
+      "--color": colorCategory[0][element.category],
+      "--hover-background-color": colorCategory[0][element.category],
+    };
+
     return (
       <div
         className="elementCard"
@@ -31,15 +41,11 @@ const ElementCard = (props) => {
         }}
         key={key}
         style={{
-          // api gives positions
           gridRow: element.ypos + 2,
           gridColumn: element.xpos,
-          color: colorCategory[0][element.category],
-          borderColor: colorCategory[0][element.category],
-          backgroundColor: "transparent",
-          "--hover-color": "black",
-          "--hover-border-color": "transparent",
-          "--hover-background-color": colorCategory[0][element.category],
+          "--border-color": colorCategory[0][element.category],
+          ...elementStyle,
+          // ...categoryHoverStyle,
         }}
       >
         <h2>{element.number}</h2>
@@ -64,7 +70,10 @@ const ElementCard = (props) => {
         </div>
         {/* key for element category */}
         <div className="categoryBtns">
-          <CategoryButton relatedCategory={element} />
+          <CategoryButton
+            relatedCategory={element}
+            // updateParentStyle={updateParentStyle}
+          />
         </div>
         {elementName}
       </div>

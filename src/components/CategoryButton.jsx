@@ -1,9 +1,7 @@
 import React from "react";
 import colorCategory from "../models/ColorCategory";
 
-const CategoryButton = (props) => {
-  // console.log(colorCategory);
-
+const CategoryButton = (props, { updateParentStyle }) => {
   class Element {
     constructor(name, color) {
       this.name = name;
@@ -18,6 +16,22 @@ const CategoryButton = (props) => {
   }
 
   const groupColor = arr.map((element, key) => {
+    const handleCategoryHover = () => {
+      const categoryStyle = {
+        transform: "scale(1,1)",
+        "--color": "black",
+        backgroundColor: colorCategory[0][element.category],
+      };
+      updateParentStyle(categoryStyle);
+    };
+
+    const handleCategoryUnhover = () => {
+      const categoryStyle = {
+        "--color": colorCategory[0][element.category],
+        "--hover-background-color": colorCategory[0][element.category],
+      };
+      updateParentStyle(categoryStyle);
+    };
     const relatedCategory = () => {
       const filterCategory = props.relatedCategory.filter((category) => {
         // all elements with the same category
@@ -28,10 +42,11 @@ const CategoryButton = (props) => {
     return (
       <div
         className="categoryHolder"
+        // onMouseEnter={() => handleCategoryHover()}
+        // onMouseLeave={() => handleCategoryUnhover()}
         style={{
-          color: element.color,
+          "--color": element.color,
           "--hover-background-color": element.color,
-          "--hover-color": "black",
         }}
         key={key}
       >
@@ -45,7 +60,6 @@ const CategoryButton = (props) => {
           <div
             className="colorBox"
             style={{
-              borderColor: "black",
               backgroundColor: element.color,
             }}
           ></div>

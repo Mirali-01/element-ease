@@ -18,11 +18,11 @@ function App() {
       })
     );
     setLoading(false);
-    // setTimeout(
-    //   // Allows us to grab data before rendering it
-    //   () => setLoading(false),
-    //   2500
-    // );
+    setTimeout(
+      // Allows us to grab data before rendering it
+      () => setLoading(false),
+      4000
+    );
   };
 
   useEffect(() => {
