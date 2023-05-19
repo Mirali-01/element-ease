@@ -21,12 +21,14 @@ const ElementCard = (props) => {
   };
 
   const elementName = element.map((element, key) => {
+    // manual style for categoryStyle
     const categoryHoverStyle = {
       transform: "scale(1,1)",
       "--color": "black",
       backgroundColor: colorCategory[0][element.category],
     };
 
+    // manual style for original element style
     const elementStyle = {
       "--color": colorCategory[0][element.category],
       "--hover-background-color": colorCategory[0][element.category],
@@ -76,7 +78,7 @@ const ElementCard = (props) => {
         {/* key for element category */}
         <div className="categoryBtns">
           <CategoryButton
-            relatedCategory={element}
+            element={element}
             updateElementStyle={updateElementStyle}
           />
         </div>

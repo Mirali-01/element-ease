@@ -1,74 +1,111 @@
-import React from "react";
+import React, { useState } from "react";
 import colorCategory from "../models/ColorCategory";
 
 const CategoryButton = (props, { updateElementStyle }) => {
+  const [newStyle, setNewStyle] = useState({});
+
+  const allElements = props.element;
+
   class Element {
-    constructor(name, color) {
-      this.name = name;
-      this.color = color;
+    constructor(elementCategory, elementColor) {
+      this.elementCategory = elementCategory;
+      this.elementColor = elementColor;
     }
   }
 
   // pushing only category names and colors objects into one element object
-  const arr = [];
-  for (let name in colorCategory[0]) {
-    arr.push(new Element(name, colorCategory[0][name]));
+  const groupColorArr = [];
+  for (let elementCategory in colorCategory[0]) {
+    // Element: elementCategory : "", elementColor : ""
+    // colorCategory[0][elementCategory] = elementColor
+    groupColorArr.push(
+      new Element(elementCategory, colorCategory[0][elementCategory])
+    );
   }
 
-  const groupColor = arr.map((element, key) => {
-    const handleCategoryHover = () => {
-      const categoryStyle = {
-        transform: "scale(1,1)",
-        "--color": "black",
-        backgroundColor: colorCategory[0][element.category],
-      };
-      updateElementStyle(categoryStyle);
-    };
+  console.log(groupColorArr);
 
-    // const handleCategoryUnhover = () => {
-    //   const categoryStyle = {
-    //     "--color": colorCategory[0][element.category],
-    //     "--hover-background-color": colorCategory[0][element.category],
-    //   };
-    //   updateElementStyle(categoryStyle);
+  // filtering
+  // const allElementsArr = [];
+  // const groupCategory = () => {
+  //   allElements.map((elements) => {
+  //     allElementsArr.push(elements);
+  //   });
+  //   return allElementsArr;
+  // };
+  // groupCategory();
+
+  // const filteredCategory = () => {
+  //   allElements.filter(checkCategory);
+  //   function checkCategory(elements) {
+  //     if (elements.category === groupColorArr.elementCategory)
+  //       return elements.name;
+  //   }
+  // };
+
+  // console.log(filteredCategory);
+
+  // const relatedCategory = () => {
+  //   const filterCategory = props.relatedCategory.filter((allElements) => {
+  //     const handleCategoryHover = () => {
+  //       const categoryStyle = {
+  //         transform: "scale(1,1)",
+  //         "--color": "black",
+  //         // backgroundColor: colorCategory[0][element.category],
+  //         backgroundColor: colorCategory[0],
+  //       };
+  //       // console.log(updateElementStyle(categoryStyle));
+  //       return categoryStyle;
+  //     };
+  //     // all elements with the same category
+  //     // console.log(handleCategoryHover());
+  //     return allElements.category === element.elementCategory;
+  //   });
+  //   console.log(filterCategory);
+  // };
+
+  const groupColor = groupColorArr.map((element, key) => {
+    // filtering and pushing to an array
+    // const relatedCategory = () => {
+    //   const filterCategory = props.relatedCategory.filter((allElements) => {
+    //     const handleCategoryHover = () => {
+    //       const categoryStyle = {
+    //         transform: "scale(1,1)",
+    //         "--color": "black",
+    //         // backgroundColor: colorCategory[0][element.category],
+    //         backgroundColor: colorCategory[0],
+    //       };
+    //       // console.log(updateElementStyle(categoryStyle));
+    //       return categoryStyle;
+    //     };
+    //     // all elements with the same category
+    //     // console.log(handleCategoryHover());
+    //     return allElements.category === element.elementCategory;
+    //   });
+    //   console.log(filterCategory);
     // };
-    const relatedCategory = () => {
-      const filterCategory = props.relatedCategory.filter((category) => {
-        // all elements with the same category
-        return category.category === element.name;
-      });
-      console.log(props);
-      console.log(filterCategory);
-    };
     return (
       <div
         className="categoryHolder"
-        onMouseOver={() => {
-          if (true) {
-            handleCategoryHover();
-          }
+        // onMouseOver={() => handleCategoryHover()}
+        onMouseEnter={() => {
+          // console.log(groupCategory());
+          // console.log(filteredCategory());
         }}
-        // onMouseOut={() => handleCategoryUnhover()}
         style={{
-          "--color": element.color,
-          "--hover-background-color": element.color,
+          "--color": element.elementColor,
+          "--hover-background-color": element.elementColor,
         }}
         key={key}
       >
-        <div
-          onClick={() => {
-            relatedCategory();
-          }}
-          className="sameCategory"
-          key={key}
-        >
+        <div className="sameCategory">
           <div
             className="colorBox"
             style={{
-              backgroundColor: element.color,
+              backgroundColor: element.elementColor,
             }}
           ></div>
-          <h2>{element.name}</h2>
+          <h2>{element.elementCategory}</h2>
         </div>
       </div>
     );
