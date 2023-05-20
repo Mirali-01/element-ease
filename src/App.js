@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import axios from "axios";
 import ElementCard from "./components/ElementCard";
 
 function App() {
@@ -7,22 +8,19 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const getElement = async () => {
-    let response = await fetch(
+    const delay = (ms) => {
+      return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+      });
+    };
+    let response = await axios.get(
       "https://kineticzephyr.onrender.com/periodictable/"
     );
-    let data = await response.json();
+    let data = response.data;
     data = data.data;
-    setState(
-      data.map((element) => {
-        return element;
-      })
-    );
+    await delay(3500);
+    setState(data);
     setLoading(false);
-    setTimeout(
-      // Allows us to grab data before rendering it
-      () => setLoading(false),
-      4000
-    );
   };
 
   useEffect(() => {

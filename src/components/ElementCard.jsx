@@ -11,14 +11,9 @@ const ElementCard = (props) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedElem, setSelectedElem] = useState({});
   const [basicInfo, setBasicInfo] = useState("");
-  const [elementStyle, setElementStyle] = useState({});
+  const [hoverCategory, setHoverCategory] = useState({});
 
   const element = props.element;
-  // console.log(element);
-
-  const updateElementStyle = (categoryStyle) => {
-    setElementStyle({ ...elementStyle, ...categoryStyle });
-  };
 
   const elementName = element.map((element, key) => {
     // manual style for categoryStyle
@@ -33,6 +28,10 @@ const ElementCard = (props) => {
       "--color": colorCategory[0][element.category],
       "--hover-background-color": colorCategory[0][element.category],
     };
+
+    // controls elements of the same category
+    const hoveredCategoryStyle =
+      hoverCategory === element.category ? categoryHoverStyle : {};
 
     return (
       <div
@@ -52,7 +51,7 @@ const ElementCard = (props) => {
           gridColumn: element.xpos,
           "--border-color": colorCategory[0][element.category],
           ...elementStyle,
-          // ...categoryHoverStyle,
+          ...hoveredCategoryStyle,
         }}
       >
         <h2>{element.number}</h2>
@@ -79,7 +78,7 @@ const ElementCard = (props) => {
         <div className="categoryBtns">
           <CategoryButton
             element={element}
-            updateElementStyle={updateElementStyle}
+            onCategoryHover={setHoverCategory}
           />
         </div>
         {elementName}
