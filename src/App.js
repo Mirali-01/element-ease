@@ -18,7 +18,7 @@ function App() {
     );
     let data = response.data;
     data = data.data;
-    await delay(3500);
+    await delay(2500);
     setState(data);
     setLoading(false);
   };
