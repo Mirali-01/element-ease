@@ -123,6 +123,7 @@ body {
   width: 28vh;
   border-radius: 1.5vh;
   color: var(--color);
+  transition: all 0.25s ease-in-out
 }
 
 .categoryHolder:hover{
@@ -139,6 +140,7 @@ body {
   gap: 1.5vh;
   text-transform: capitalize;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .colorBox{
@@ -158,13 +160,12 @@ body {
   background-color: transparent;
   color: var(--color);
   border-color: var(--border-color);
-  transition: all 0.25s ease-in-out
+  transition: all 0.25s ease-in-out;
 }
 
 .elementCard:hover{
-  transform: scale(1.5, 1.5);
+  transform: scale(1.25, 1.25);
   color: black;
-  border-color: transparent;
   background-color: var(--hover-background-color);
   cursor: pointer;
 }

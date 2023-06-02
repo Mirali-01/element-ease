@@ -9,7 +9,6 @@ const CategoryButton = (props) => {
     }
   }
 
-  // pushing only category names and colors objects into one element object
   const groupColorArr = [];
   for (let elementCategory in colorCategory[0]) {
     // Element: elementCategory : "", elementColor : ""

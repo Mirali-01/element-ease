@@ -27,7 +27,6 @@ function App() {
     getElement();
   }, []);
 
-  // displays loading before data fetched
   if (loading) {
     return (
       <div className="loadingScreen">

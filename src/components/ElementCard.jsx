@@ -16,20 +16,17 @@ const ElementCard = (props) => {
   const element = props.element;
 
   const elementName = element.map((element, key) => {
-    // manual style for categoryStyle
     const categoryHoverStyle = {
       transform: "scale(1,1)",
       "--color": "black",
       backgroundColor: colorCategory[0][element.category],
     };
 
-    // manual style for original element style
     const elementStyle = {
       "--color": colorCategory[0][element.category],
       "--hover-background-color": colorCategory[0][element.category],
     };
 
-    // controls elements of the same category
     const hoveredCategoryStyle =
       hoverCategory === element.category ? categoryHoverStyle : {};
 
@@ -37,11 +34,9 @@ const ElementCard = (props) => {
       <div
         className="elementCard"
         onMouseOver={() => {
-          // when mouse is over the element card, basic info shows up on the BasicInfo component
           setBasicInfo(element);
         }}
         onClick={() => {
-          // modal pops up
           setShowModal(true);
           setSelectedElem(element);
         }}
@@ -70,20 +65,14 @@ const ElementCard = (props) => {
     >
       <div className="periodicTable">
         <Nav />
-        {/* enlarged element display */}
         <div className="basicInfoBox">
           <BasicInfo basicInfo={basicInfo} />
         </div>
-        {/* key for element category */}
         <div className="categoryBtns">
-          <CategoryButton
-            element={element}
-            onCategoryHover={setHoverCategory}
-          />
+          <CategoryButton onCategoryHover={setHoverCategory} />
         </div>
         {elementName}
       </div>
-      {/* modal is child component of ElementCard and displays to body of document, only changing the physical placement of the DOM node, in this case to body of doc*/}
       {showModal &&
         createPortal(
           <ModalContent
