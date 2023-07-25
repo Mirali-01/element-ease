@@ -15,7 +15,7 @@ const ElementCard = (props) => {
 
   const element = props.element;
 
-  const elementName = element.map((element, key) => {
+  const elementName = element?.map((element, key) => {
     const categoryHoverStyle = {
       transform: "scale(1,1)",
       "--color": "black",

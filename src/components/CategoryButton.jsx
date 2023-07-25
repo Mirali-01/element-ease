@@ -22,6 +22,7 @@ const CategoryButton = (props) => {
     return (
       <div
         className="categoryHolder"
+        // onClick={categoryModal}
         onMouseEnter={() => {
           props.onCategoryHover(element.elementCategory);
         }}
