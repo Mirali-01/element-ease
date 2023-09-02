@@ -1,7 +1,13 @@
 import React from "react";
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import colorCategory from "../models/ColorCategory";
+import CategoryModalContent from "./CategoryModalContent";
 
-const CategoryButton = (props) => {
+const CategoryButton = ({ onCategoryHover }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [element, setElement] = useState("");
+
   class Element {
     constructor(elementCategory, elementColor) {
       this.elementCategory = elementCategory;
@@ -22,12 +28,11 @@ const CategoryButton = (props) => {
     return (
       <div
         className="categoryHolder"
-        // onClick={categoryModal}
         onMouseEnter={() => {
-          props.onCategoryHover(element.elementCategory);
+          onCategoryHover(element.elementCategory);
         }}
         onMouseLeave={() => {
-          props.onCategoryHover(null);
+          onCategoryHover(null);
         }}
         style={{
           "--color": element.elementColor,
@@ -35,7 +40,13 @@ const CategoryButton = (props) => {
         }}
         key={key}
       >
-        <div className="sameCategory">
+        <div
+          onClick={() => {
+            setShowModal(true);
+            setElement(element);
+          }}
+          className="sameCategory"
+        >
           <div
             className="colorBox"
             style={{
@@ -48,7 +59,20 @@ const CategoryButton = (props) => {
     );
   });
 
-  return <div className="groupColor">{groupColor}</div>;
+  return (
+    <>
+      <div className="groupColor">{groupColor}</div>
+      {showModal &&
+        createPortal(
+          <CategoryModalContent
+            element={element}
+            onClose={() => setShowModal(false)}
+          />,
+          document.body
+        )}
+      ;
+    </>
+  );
 };
 
 export default CategoryButton;

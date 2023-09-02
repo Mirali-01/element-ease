@@ -1,14 +1,10 @@
 import React from "react";
+import RandomWikiElement from "./RandomWikiElement";
 
 export const Nav = () => {
   return (
     <div className="nav">
-      <div className="placeholder">
-        <img
-          src="https://icons-for-free.com/iconfiles/png/512/design+development+facebook+framework+mobile+react+icon-1320165723839064798.png"
-          alt="React"
-        />
-      </div>
+      <RandomWikiElement />
       <h1>The Periodic Table of Elements</h1>
       <div className="linkContainer">
         <a href="https://github.com/Mirali-01" target="_blank" rel="noreferrer">
@@ -30,12 +26,6 @@ export const Nav = () => {
             alt="Email"
           />
         </a>
-        {/* <div className=""></div>
-        <img
-          
-          src="https://ps.w.org/dark-mode-for-wp-dashboard/assets/icon-256x256.png?rev=2404672"
-          alt="darkMode"
-        /> */}
       </div>
     </div>
   );

@@ -2,8 +2,6 @@ import React from "react";
 import colorCategory from "../models/ColorCategory";
 
 const ModalContent = ({ element, onClose }) => {
-  // console.log(element);
-
   return (
     <div className="modalContainer" onClick={onClose}>
       <h1
@@ -27,9 +25,7 @@ const ModalContent = ({ element, onClose }) => {
           className="modal"
           style={{
             color: colorCategory[0][element.category],
-            borderColor: colorCategory[0][element.category],
-            backgroundColor: "black",
-            border: "0.5vh solid",
+            border: `0.5vh solid ${colorCategory[0][element.category]}`,
           }}
         >
           <div className="imgBox">

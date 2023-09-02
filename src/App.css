@@ -40,25 +40,29 @@ body {
   position: absolute;
   width: 175vh;
   font-size: 3vh;
-  color: rgb(207, 215, 215)
+  color: rgba(207, 215, 215, 0.99)
 }
 
-.placeholder{
+.nav h1{
+  text-shadow: 0 2px 0 darkviolet;
+}
+
+.randomWikiElement{
   padding: 1vh;
 }
 
-  .placeholder img{
+  .randomWikiElement img{
     border: solid;
     height: 8.5vh;
     width: 8.5vh;
     border-radius: 50%;
-    animation: placeholder-spin infinite 5s linear;
+    animation: randomWikiElement-spin infinite 5s linear;
     background: linear-gradient(black, black) padding-box,
     linear-gradient(dodgerblue, darkgoldenrod, darkviolet) border-box;
     border: 0.35vh solid transparent;
   }
 
-@keyframes placeholder-spin {
+@keyframes randomWikiElement-spin {
   0% {
     transform: rotate(0deg);
   }
@@ -180,10 +184,12 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.75);
   position: fixed;
+  text-align: center;
 }
 
 .modalHeader{
   font-size: 6vh;
+  text-transform: capitalize;
 }
 
 .downArrow img{
@@ -192,7 +198,7 @@ body {
   border-radius: 50%;
 }
 
-.modal {
+.modal, .modalCategories {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -203,6 +209,13 @@ body {
   height: 50vh;
   line-height: 2vh;
   overflow: scroll;
+  background-color: black;
+}
+
+.modalCategories{
+  width: 120vh;
+  height: 70vh;
+  border-radius: 12.5%;
 }
 
 .wiki{

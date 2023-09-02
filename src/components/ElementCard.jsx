@@ -7,13 +7,11 @@ import colorCategory from "../models/ColorCategory";
 import BasicInfo from "./BasicInfo";
 import Nav from "./Nav";
 
-const ElementCard = (props) => {
+const ElementCard = ({ element }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedElem, setSelectedElem] = useState({});
   const [basicInfo, setBasicInfo] = useState("");
   const [hoverCategory, setHoverCategory] = useState({});
-
-  const element = props.element;
 
   const elementName = element?.map((element, key) => {
     const categoryHoverStyle = {
@@ -77,9 +75,7 @@ const ElementCard = (props) => {
         createPortal(
           <ModalContent
             element={selectedElem}
-            onClose={() => {
-              setShowModal(false);
-            }}
+            onClose={() => setShowModal(false)}
           />,
           document.body
         )}

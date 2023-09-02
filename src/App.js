@@ -8,18 +8,12 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const getElement = async () => {
-    const delay = (ms) => {
-      return new Promise((resolve) => {
-        setTimeout(resolve, ms);
-      });
-    };
-    let response = await axios.get(
+    const response = await axios.get(
       "https://kineticzephyr.onrender.com/periodictable/"
     );
     let data = response.data;
     data = data.data;
     setState(data);
-    await delay(2500);
     setLoading(false);
   };
 
