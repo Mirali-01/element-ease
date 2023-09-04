@@ -1,71 +1,65 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import colorCategory from "../models/ColorCategory";
 import CategoryModalContent from "./CategoryModalContent";
 
 const CategoryButton = ({ onCategoryHover }) => {
   const [showModal, setShowModal] = useState(false);
-  const [element, setElement] = useState("");
+  const [selectedElement, setSelectedElement] = useState(null);
 
-  class Element {
-    constructor(elementCategory, elementColor) {
-      this.elementCategory = elementCategory;
-      this.elementColor = elementColor;
-    }
-  }
+  const createCategoryElement = (category, color) => ({
+    category,
+    color,
+  });
 
-  const groupColorArr = [];
-  for (let elementCategory in colorCategory[0]) {
-    // Element: elementCategory : "", elementColor : ""
-    // colorCategory[0][elementCategory] = elementColor
-    groupColorArr.push(
-      new Element(elementCategory, colorCategory[0][elementCategory])
-    );
-  }
-
-  const groupColor = groupColorArr.map((element, key) => {
-    return (
-      <div
-        className="categoryHolder"
-        onMouseEnter={() => {
-          onCategoryHover(element.elementCategory);
-        }}
-        onMouseLeave={() => {
-          onCategoryHover(null);
-        }}
-        style={{
-          "--color": element.elementColor,
-          "--hover-background-color": element.elementColor,
-        }}
-        key={key}
-      >
+  const groupColorElements = Object.entries(colorCategory[0]).map(
+    ([elementCategory, elementColor]) => {
+      const categoryElement = createCategoryElement(
+        elementCategory,
+        elementColor
+      );
+      return (
         <div
-          onClick={() => {
-            setShowModal(true);
-            setElement(element);
+          className="categoryHolder"
+          onMouseEnter={() => {
+            onCategoryHover(categoryElement.category);
           }}
-          className="sameCategory"
+          onMouseLeave={() => {
+            onCategoryHover(null);
+          }}
+          style={{
+            "--color": categoryElement.color,
+            "--hover-background-color": categoryElement.color,
+          }}
+          key={categoryElement.category}
         >
           <div
-            className="colorBox"
-            style={{
-              backgroundColor: element.elementColor,
+            onClick={() => {
+              setShowModal(true);
+              setSelectedElement(categoryElement);
             }}
-          ></div>
-          <h2>{element.elementCategory}</h2>
+            className="sameCategory"
+          >
+            <div
+              className="colorBox"
+              style={{
+                backgroundColor: categoryElement.color,
+              }}
+            ></div>
+            <h2>{categoryElement.category}</h2>
+          </div>
         </div>
-      </div>
-    );
-  });
+      );
+    }
+  );
 
   return (
     <>
-      <div className="groupColor">{groupColor}</div>
+      <div className="groupColor">{groupColorElements}</div>
       {showModal &&
         createPortal(
           <CategoryModalContent
-            element={element}
+            element={selectedElement}
             onClose={() => setShowModal(false)}
           />,
           document.body
