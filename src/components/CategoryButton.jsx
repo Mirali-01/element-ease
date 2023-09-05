@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import colorCategory from "../models/ColorCategory";
 import CategoryModalContent from "./CategoryModalContent";
 
-const CategoryButton = ({ onCategoryHover }) => {
+const CategoryButton = ({ elements, onCategoryHover }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedElement, setSelectedElement] = useState(null);
 
@@ -18,37 +18,46 @@ const CategoryButton = ({ onCategoryHover }) => {
         elementCategory,
         elementColor
       );
+      // return (
+      //   <div
+      //     className="categoryHolder"
+      //     onMouseEnter={() => {
+      //       onCategoryHover(categoryElement.category);
+      //     }}
+      //     onMouseLeave={() => {
+      //       onCategoryHover(null);
+      //     }}
+      //     style={{
+      //       "--color": categoryElement.color,
+      //       "--hover-background-color": categoryElement.color,
+      //     }}
+      //     key={categoryElement.category}
+      //   >
+      //     <div
+      //       onClick={() => {
+      //         setShowModal(true);
+      //         setSelectedElement(categoryElement);
+      //       }}
+      //       className="sameCategory"
+      //     >
+      //       <div
+      //         className="colorBox"
+      //         style={{
+      //           backgroundColor: categoryElement.color,
+      //         }}
+      //       ></div>
+      //       <h2>{categoryElement.category}</h2>
+      //     </div>
+      //   </div>
+      // );
       return (
-        <div
-          className="categoryHolder"
-          onMouseEnter={() => {
-            onCategoryHover(categoryElement.category);
-          }}
-          onMouseLeave={() => {
-            onCategoryHover(null);
-          }}
-          style={{
-            "--color": categoryElement.color,
-            "--hover-background-color": categoryElement.color,
-          }}
+        <CategoryElement
           key={categoryElement.category}
-        >
-          <div
-            onClick={() => {
-              setShowModal(true);
-              setSelectedElement(categoryElement);
-            }}
-            className="sameCategory"
-          >
-            <div
-              className="colorBox"
-              style={{
-                backgroundColor: categoryElement.color,
-              }}
-            ></div>
-            <h2>{categoryElement.category}</h2>
-          </div>
-        </div>
+          categoryElement={categoryElement}
+          onCategoryHover={onCategoryHover}
+          setShowModal={setShowModal}
+          setSelectedElement={setSelectedElement}
+        />
       );
     }
   );
@@ -59,6 +68,7 @@ const CategoryButton = ({ onCategoryHover }) => {
       {showModal &&
         createPortal(
           <CategoryModalContent
+            elements={elements}
             element={selectedElement}
             onClose={() => setShowModal(false)}
           />,
@@ -70,3 +80,42 @@ const CategoryButton = ({ onCategoryHover }) => {
 };
 
 export default CategoryButton;
+
+const CategoryElement = ({
+  categoryElement,
+  onCategoryHover,
+  setShowModal,
+  setSelectedElement,
+}) => {
+  return (
+    <div
+      className="categoryHolder"
+      onMouseEnter={() => {
+        onCategoryHover(categoryElement.category);
+      }}
+      onMouseLeave={() => {
+        onCategoryHover(null);
+      }}
+      style={{
+        "--color": categoryElement.color,
+        "--hover-background-color": categoryElement.color,
+      }}
+    >
+      <div
+        onClick={() => {
+          setShowModal(true);
+          setSelectedElement(categoryElement);
+        }}
+        className="sameCategory"
+      >
+        <div
+          className="colorBox"
+          style={{
+            backgroundColor: categoryElement.color,
+          }}
+        ></div>
+        <h2>{categoryElement.category}</h2>
+      </div>
+    </div>
+  );
+};

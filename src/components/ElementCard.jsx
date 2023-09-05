@@ -13,50 +13,51 @@ const ElementCard = ({ element }) => {
   const [hoverCategory, setHoverCategory] = useState("");
   // This element displays all elements
   // console.log(element);
-  const renderElementCards = () => {
-    if (!element) return null;
 
-    return element.map((elem, key) => {
-      const categoryHoverStyle = {
-        transform: "scale(1,1)",
-        "--color": "black",
-        backgroundColor: colorCategory[0][elem.category],
-      };
+  // const renderElementCards = () => {
+  //   if (!element) return null;
 
-      const elementStyle = {
-        "--color": colorCategory[0][elem.category],
-        "--hover-background-color": colorCategory[0][elem.category],
-      };
+  //   return element.map((elem, key) => {
+  //     const categoryHoverStyle = {
+  //       transform: "scale(1,1)",
+  //       "--color": "black",
+  //       backgroundColor: colorCategory[0][elem.category],
+  //     };
 
-      const hoveredCategoryStyle =
-        hoverCategory === elem.category ? categoryHoverStyle : {};
+  //     const elementStyle = {
+  //       "--color": colorCategory[0][elem.category],
+  //       "--hover-background-color": colorCategory[0][elem.category],
+  //     };
 
-      return (
-        <div
-          className="elementCard"
-          onMouseOver={() => {
-            setBasicInfo(elem);
-          }}
-          onClick={() => {
-            setShowModal(true);
-            setSelectedElem(elem);
-          }}
-          key={key}
-          style={{
-            gridRow: elem.ypos + 2,
-            gridColumn: elem.xpos,
-            "--border-color": colorCategory[0][elem.category],
-            ...elementStyle,
-            ...hoveredCategoryStyle,
-          }}
-        >
-          <h2>{elem.number}</h2>
-          <h1>{elem.symbol}</h1>
-          <h2>{elem.name}</h2>
-        </div>
-      );
-    });
-  };
+  //     const hoveredCategoryStyle =
+  //       hoverCategory === elem.category ? categoryHoverStyle : {};
+
+  //     return (
+  //       <div
+  //         className="elementCard"
+  //         onMouseOver={() => {
+  //           setBasicInfo(elem);
+  //         }}
+  //         onClick={() => {
+  //           setShowModal(true);
+  //           setSelectedElem(elem);
+  //         }}
+  //         key={key}
+  //         style={{
+  //           gridRow: elem.ypos + 2,
+  //           gridColumn: elem.xpos,
+  //           "--border-color": colorCategory[0][elem.category],
+  //           ...elementStyle,
+  //           ...hoveredCategoryStyle,
+  //         }}
+  //       >
+  //         <h2>{elem.number}</h2>
+  //         <h1>{elem.symbol}</h1>
+  //         <h2>{elem.name}</h2>
+  //       </div>
+  //     );
+  //   });
+  // };
 
   return (
     <div
@@ -71,9 +72,21 @@ const ElementCard = ({ element }) => {
           {basicInfo && <BasicInfo basicInfo={basicInfo} />}
         </div>
         <div className="categoryBtns">
-          <CategoryButton onCategoryHover={setHoverCategory} />
+          <CategoryButton
+            elements={element}
+            onCategoryHover={setHoverCategory}
+          />
         </div>
-        {renderElementCards()}
+        {/* {renderElementCards()} */}
+        <ElementGrid
+          element={element}
+          basicInfo={basicInfo}
+          showModal={showModal}
+          setShowModal={setShowModal}
+          setSelectedElem={setSelectedElem}
+          hoverCategory={hoverCategory}
+          setBasicInfo={setBasicInfo}
+        />
       </div>
       {showModal &&
         createPortal(
@@ -88,3 +101,57 @@ const ElementCard = ({ element }) => {
 };
 
 export default ElementCard;
+
+const ElementGrid = ({
+  element,
+  setShowModal,
+  setSelectedElem,
+  hoverCategory,
+  setBasicInfo,
+}) => {
+  if (!element) return null;
+
+  return element.map((elem) => {
+    // console.log(elem);
+    // const elementsWithSameCategory =
+    //   elem.category === "noble gas" ? elem.name : "";
+    // console.log(elementsWithSameCategory);
+
+    const categoryHoverStyle = {
+      transform: "scale(1,1)",
+      "--color": "black",
+      backgroundColor: colorCategory[0][elem.category],
+    };
+
+    const elementStyle = {
+      "--color": colorCategory[0][elem.category],
+      "--hover-background-color": colorCategory[0][elem.category],
+    };
+
+    const hoveredCategoryStyle =
+      hoverCategory === elem.category ? categoryHoverStyle : {};
+
+    return (
+      <div
+        className="elementCard"
+        onMouseOver={() => setBasicInfo(elem)}
+        onClick={() => {
+          setShowModal(true);
+          setSelectedElem(elem);
+        }}
+        key={elem.number}
+        style={{
+          gridRow: elem.ypos + 2,
+          gridColumn: elem.xpos,
+          "--border-color": colorCategory[0][elem.category],
+          ...elementStyle,
+          ...hoveredCategoryStyle,
+        }}
+      >
+        <h2>{elem.number}</h2>
+        <h1>{elem.symbol}</h1>
+        <h2>{elem.name}</h2>
+      </div>
+    );
+  });
+};

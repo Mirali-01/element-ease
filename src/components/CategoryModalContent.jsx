@@ -1,7 +1,13 @@
 import React from "react";
+// import ModalWrapper from "./ModalWrapper";
 
-const CategoryModalContent = ({ element, onClose }) => {
-  // if elements are in the same category, display those elements in modalCategories
+const CategoryModalContent = ({ elements, element, onClose }) => {
+  // if there are elements that have the same element.category, display the ModalWrapper for those elements, and then place them in modalCategories
+  // console.log(elements);
+  // Filter elements based on the category
+  const categoryElements = elements.filter(
+    (elem) => elem.category === element.category
+  );
 
   return (
     <div
@@ -16,7 +22,11 @@ const CategoryModalContent = ({ element, onClose }) => {
           className="modalCategories"
           style={{ border: `0.5vh solid ${element.color}` }}
         >
-          <p>Get all elements for each category</p>
+          {categoryElements.map((elem) => (
+            <h2 key={elem._id}>{elem.name}</h2>
+          ))}
+          {/* element ModalWrappers in the same element.category */}
+          {/* <ModalWrapper /> */}
         </div>
       </div>
     </div>
