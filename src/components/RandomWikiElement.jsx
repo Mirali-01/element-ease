@@ -133,18 +133,27 @@ const RandomWikiElement = () => {
     setRandomElement(newRandomElement);
   };
   return (
-    <div className="randomWikiElement">
-      <a
-        href={`https://en.wikipedia.org/wiki/${randomElement}`}
-        target="_blank"
-        rel="noreferrer"
-      >
+    <div className="randomWikiElementContainer">
+      <div className="downArrow" style={{ transform: "scale(0.75, 0.75)" }}>
         <img
-          src="https://icons-for-free.com/iconfiles/png/512/design+development+facebook+framework+mobile+react+icon-1320165723839064798.png"
-          alt="React"
-          onClick={handleImageClick}
+          style={{ transform: "rotate(-90deg)" }}
+          src="https://happyinvites.co/wp-content/uploads/2022/04/Arrow-Pointing-Down.gif"
+          alt=""
         />
-      </a>
+      </div>
+      <div className="randomWikiElement">
+        <a
+          href={`https://en.wikipedia.org/wiki/${randomElement}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="https://icons-for-free.com/iconfiles/png/512/design+development+facebook+framework+mobile+react+icon-1320165723839064798.png"
+            alt="React"
+            onClick={handleImageClick}
+          />
+        </a>
+      </div>
     </div>
   );
 };
