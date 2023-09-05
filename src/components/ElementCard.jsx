@@ -11,10 +11,6 @@ const ElementCard = ({ element }) => {
   const [selectedElem, setSelectedElem] = useState({});
   const [basicInfo, setBasicInfo] = useState("");
   const [hoverCategory, setHoverCategory] = useState("");
-  // This element displays all elements
-  // console.log(element);
-
-  // const renderElementCards = () => {
   //   if (!element) return null;
 
   //   return element.map((elem, key) => {
@@ -77,7 +73,6 @@ const ElementCard = ({ element }) => {
             onCategoryHover={setHoverCategory}
           />
         </div>
-        {/* {renderElementCards()} */}
         <ElementGrid
           element={element}
           basicInfo={basicInfo}
@@ -112,11 +107,6 @@ const ElementGrid = ({
   if (!element) return null;
 
   return element.map((elem) => {
-    // console.log(elem);
-    // const elementsWithSameCategory =
-    //   elem.category === "noble gas" ? elem.name : "";
-    // console.log(elementsWithSameCategory);
-
     const categoryHoverStyle = {
       transform: "scale(1,1)",
       "--color": "black",

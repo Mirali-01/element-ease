@@ -18,38 +18,7 @@ const CategoryButton = ({ elements, onCategoryHover }) => {
         elementCategory,
         elementColor
       );
-      // return (
-      //   <div
-      //     className="categoryHolder"
-      //     onMouseEnter={() => {
-      //       onCategoryHover(categoryElement.category);
-      //     }}
-      //     onMouseLeave={() => {
-      //       onCategoryHover(null);
-      //     }}
-      //     style={{
-      //       "--color": categoryElement.color,
-      //       "--hover-background-color": categoryElement.color,
-      //     }}
-      //     key={categoryElement.category}
-      //   >
-      //     <div
-      //       onClick={() => {
-      //         setShowModal(true);
-      //         setSelectedElement(categoryElement);
-      //       }}
-      //       className="sameCategory"
-      //     >
-      //       <div
-      //         className="colorBox"
-      //         style={{
-      //           backgroundColor: categoryElement.color,
-      //         }}
-      //       ></div>
-      //       <h2>{categoryElement.category}</h2>
-      //     </div>
-      //   </div>
-      // );
+
       return (
         <CategoryElement
           key={categoryElement.category}
