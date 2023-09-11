@@ -10,9 +10,7 @@ function App() {
 
   const fetchElement = async () => {
     try {
-      const response = await axios.get(
-        "https://kineticzephyr.onrender.com/periodictable/"
-      );
+      const response = await axios.get("https://elementease.onrender.com/");
       const { data } = response.data;
       setElementData(data);
       setLoading(false);
