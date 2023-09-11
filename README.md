@@ -1,12 +1,12 @@
 # The Periodic Table of Elements
 
-**<a href="https://dynamicchemistry.netlify.app" target="_blank">Check Out the Site!</a>**
+**<a href="https://elementease.netlify.app" target="_blank">Check Out the Site!</a>**
 
 A colorful and interactive way to learn about the chemical elements that make up our weird universe.
 
 Learn some interesting facts about each element and enjoy the cool features that come with the site.
 
-### Features Include:
+### Features Include
 
 - Every natural and theoretical element that is currently known
 - A color-coordinated key showing the types of elements that exist on earth

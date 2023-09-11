@@ -15,7 +15,6 @@ body {
 }
 
 .loadingScreen img{
-  height: 100%;
   width: 100%;
 }
 
@@ -208,6 +207,8 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  /* scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; */
 }
 
 .modal, .modalCategories {
