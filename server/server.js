@@ -1,12 +1,13 @@
+// Server API: "https://elementease.onrender.com"
 require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const ElementRouter = require("./routes/ElementRoutes");
 const dbConfig = require("./config/mongoDB");
 const AllElements = require("./models/AllElements");
 const Element = require("./models/Element");
+const ElementRouter = require("./routes/ElementRoutes");
 const fs = require("fs");
 
 const app = express();
@@ -30,7 +31,6 @@ mongoose
 
         await AllElements.create(seedData);
 
-        // Extract elements from seedData and save them individually
         const elementsData = seedData.data;
 
         for (const elementData of elementsData) {

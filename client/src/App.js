@@ -10,7 +10,7 @@ function App() {
 
   const fetchElement = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/");
+      const response = await axios.get("https://elementease.onrender.com");
       const { data } = response.data;
       setElementData(data);
       setLoading(false);
