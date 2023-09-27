@@ -207,8 +207,6 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* scroll-snap-type: x mandatory;
-  scroll-behavior: smooth; */
 }
 
 .modal, .modalCategories {
@@ -261,6 +259,15 @@ body {
 
 .moreInfo{
   text-align: left;
+}
+
+select{
+  margin-left: 6px;
+  color: inherit;
+  background-color: inherit;
+  border: solid;
+  border-color: inherit;
+  border-radius: 1vh;
 }
 
 .btn{

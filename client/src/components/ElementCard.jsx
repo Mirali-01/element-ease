@@ -11,49 +11,6 @@ const ElementCard = ({ element }) => {
   const [selectedElem, setSelectedElem] = useState({});
   const [basicInfo, setBasicInfo] = useState("");
   const [hoverCategory, setHoverCategory] = useState("");
-  //   if (!element) return null;
-
-  //   return element.map((elem, key) => {
-  //     const categoryHoverStyle = {
-  //       transform: "scale(1,1)",
-  //       "--color": "black",
-  //       backgroundColor: colorCategory[0][elem.category],
-  //     };
-
-  //     const elementStyle = {
-  //       "--color": colorCategory[0][elem.category],
-  //       "--hover-background-color": colorCategory[0][elem.category],
-  //     };
-
-  //     const hoveredCategoryStyle =
-  //       hoverCategory === elem.category ? categoryHoverStyle : {};
-
-  //     return (
-  //       <div
-  //         className="elementCard"
-  //         onMouseOver={() => {
-  //           setBasicInfo(elem);
-  //         }}
-  //         onClick={() => {
-  //           setShowModal(true);
-  //           setSelectedElem(elem);
-  //         }}
-  //         key={key}
-  //         style={{
-  //           gridRow: elem.ypos + 2,
-  //           gridColumn: elem.xpos,
-  //           "--border-color": colorCategory[0][elem.category],
-  //           ...elementStyle,
-  //           ...hoveredCategoryStyle,
-  //         }}
-  //       >
-  //         <h2>{elem.number}</h2>
-  //         <h1>{elem.symbol}</h1>
-  //         <h2>{elem.name}</h2>
-  //       </div>
-  //     );
-  //   });
-  // };
 
   return (
     <div

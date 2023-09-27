@@ -2,6 +2,34 @@ import React from "react";
 import colorCategory from "../models/ColorCategory";
 
 const ModalWrapper = ({ element }) => {
+  const handleShellOptions = () => {
+    if (!element.shells.length)
+      return (
+        <option value={null}>
+          <b>N/A</b>
+        </option>
+      );
+    return element.shells.map((shell, index) => (
+      <option key={index} value={shell}>
+        <b>{`${shell} (${index + 1})`}</b>
+      </option>
+    ));
+  };
+
+  // Function to create an array of option elements
+  const handleIonizationEnergyOptions = () => {
+    if (!element.ionization_energies.length)
+      return (
+        <option value={null}>
+          <b>N/A</b>
+        </option>
+      );
+    return element.ionization_energies.map((energy, index) => (
+      <option key={index} value={energy}>
+        <b>{`${energy} kJ/mol (${index})`}</b>
+      </option>
+    ));
+  };
   return (
     <div className="modalWrapper">
       <div
@@ -31,34 +59,59 @@ const ModalWrapper = ({ element }) => {
         <div className="elementModal">
           Summary <hr />
           <p>{element.summary}</p>
-          <br />
           <div className="moreInfo">
+            <div style={{ textAlign: "center" }}>
+              <p>
+                Block: <b>{element.block}</b>{" "}
+              </p>
+              <p>
+                Period: <b>{element.period}</b>{" "}
+              </p>
+              <p>
+                Group: <b>{element.group}</b>{" "}
+              </p>
+            </div>
             <p>
               Atomic Mass:{" "}
-              <strong>
-                {Math.round(1000 * element.atomic_mass) / 1000}
-                g/mol (amu)
-              </strong>
+              <b>
+                {`${Math.round(1000 * element.atomic_mass) / 1000} g/mol (amu)`}
+              </b>
             </p>
-            <p>Discovered By: {element.discovered_by}</p>
-            <p>Phase: {element.phase}</p>
+            <p>{`Discovered By: ${element.discovered_by}`}</p>
+            <p>{`Phase: ${element.phase}`}</p>
+            <p>{`Boiling Point: ${
+              element.boil ? `${element.boil} K` : "N/A"
+            }`}</p>
+            <p>{`Melting Point: ${
+              element.melt ? `${element.melt} K` : "N/A"
+            }`}</p>
             <p style={{ textTransform: "capitalize" }}>
               Type: {element.category}
             </p>
             <p>
-              Ionization Energies:{" "}
-              <strong>{element.ionization_energies[0]} kJ/mol</strong>
-              {/* add dropdown converter for eV*/}
+              <label htmlFor="shells">Shells:</label>
+              <select name="shells" id="shells">
+                {handleShellOptions()}
+              </select>
+            </p>
+            <p>
+              <label htmlFor="ionization_energies">Ionization Energies:</label>
+              <select name="ionization_energies" id="ionization_energies">
+                {handleIonizationEnergyOptions()}
+              </select>
             </p>
             <p>
               Density:{" "}
-              <strong>
+              <b>
                 {element.density} g/cm<sup>3</sup>
-              </strong>
+              </b>
             </p>
             <p>
-              Electron Configuration:{" "}
-              <strong>{element.electron_configuration}</strong>
+              Electron Configuration: <b>{element.electron_configuration}</b>
+            </p>
+            <p>
+              Electron Configuration (Semantic):{" "}
+              <b>{element.electron_configuration_semantic}</b>
             </p>
           </div>
         </div>
