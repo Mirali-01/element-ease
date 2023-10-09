@@ -20,7 +20,7 @@ const CategoryModalContent = ({ elements, element, onClose }) => {
           style={{ border: `0.5vh solid ${element.color}` }}
         >
           {categoryElements.map((elem) => (
-            <ModalWrapper key={elem._id} element={elem} />
+            <ModalWrapper key={elem.number} element={elem} />
           ))}
         </div>
       </div>

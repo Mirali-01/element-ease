@@ -3,6 +3,7 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
+const compression = require("compression");
 const mongoose = require("mongoose");
 const dbConfig = require("./config/mongoDB");
 const AllElements = require("./models/AllElements");
@@ -15,6 +16,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors());
+app.use(compression());
 
 // Connect to MongoDB
 mongoose

@@ -1,21 +1,29 @@
-.App {
-  text-align: center;
-}
-
 body {
   margin: 0;
   font-family: "Rockwell";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-color: #000000;
 }
 
 .loadingScreen{
-  background-color: gray;
+  background-color: #808080;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  height: 100vh;
+  width: 175vh;
 }
 
-.loadingScreen img{
-  width: 100%;
+.loadingScreen span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27.77vh;
+}
+
+.App {
+  text-align: center;
 }
 
 .mid{
@@ -43,25 +51,25 @@ body {
 }
 
 .nav h1{
-  text-shadow: 0 2px 0 darkviolet;
+  text-shadow: 0 2px 0 #9400D3;
 }
 
 .randomWikiElement{
   padding: 1vh;
 }
 
-  .randomWikiElement img{
+.randomWikiElement img{
     border: solid;
     height: 8.5vh;
     width: 8.5vh;
     border-radius: 50%;
-    animation: randomWikiElement-spin infinite 5s linear;
-    background: linear-gradient(black, black) padding-box,
-    linear-gradient(dodgerblue, darkgoldenrod, darkviolet) border-box;
+    animation: spin infinite 5s linear;
+    background: linear-gradient(#000000, #000000) padding-box,
+    linear-gradient(#1e90ff, #b8860b, #9400D3) border-box;
     border: 0.35vh solid transparent;
-  }
+}
 
-@keyframes randomWikiElement-spin {
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }
@@ -82,14 +90,14 @@ body {
   height: 6vh;
   width: 6vh;
   border-radius: 50%;
-  background: linear-gradient(black, black) padding-box,
-  linear-gradient(to top, dodgerblue, darkviolet) border-box;
+  background: linear-gradient(#000000, #000000) padding-box,
+  linear-gradient(to top, #1e90ff, #9400d3) border-box;
   border: 0.35vh solid transparent;
 }
 
 .linkContainer img:hover{
-  background: linear-gradient(black, black) padding-box,
-  linear-gradient(to top, darkviolet, dodgerblue) border-box;
+  background: linear-gradient(#000000, #000000) padding-box,
+  linear-gradient(to top, #9400d3, #1e90ff) border-box;
 }
 
 .basicInfoBox{
@@ -130,7 +138,7 @@ body {
 }
 
 .categoryHolder:hover{
-  color: black;
+  color: #000000;
   background-color: var(--hover-background-color)
 }
 
@@ -147,7 +155,7 @@ body {
 }
 
 .colorBox{
-  border: 0.25vh black solid;
+  border: 0.25vh #000000 solid;
   height: 3vh;
   width: 3vh;
   border-radius: 10%;
@@ -168,7 +176,7 @@ body {
 
 .elementCard:hover{
   transform: scale(1.25, 1.25);
-  color: black;
+  color: #000000;
   background-color: var(--hover-background-color);
   cursor: pointer;
 }
@@ -184,17 +192,30 @@ body {
   background-color: rgba(0, 0, 0, 0.75);
   position: fixed;
   text-align: center;
+  gap: 2.5vh;
 }
 
 .modalHeader{
   font-size: 6vh;
   text-transform: capitalize;
+  margin: 0;
+  margin-top: 2.5vh;
 }
 
 .downArrow img{
   height: 7.5vh;
   width: 7.5vh;
   border-radius: 50%;
+  animation: oscillate-Y infinite 1s alternate;
+}
+
+@keyframes oscillate-Y {
+  0%{
+transform: translateY(0)
+  }
+  100%{
+transform: translateY(20px)
+  }
 }
 
 .modal{
@@ -207,17 +228,18 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 2.5vh;
 }
 
 .modal, .modalCategories {
-  box-shadow: whitesmoke 0px 1px 15px 0px;
+  box-shadow: #f5f5f5 0px 1px 15px 0px;
   border-radius: 10%;
   margin: auto;
   width: 50vh;
   height: 50vh;
   line-height: 2vh;
   overflow: scroll;
-  background-color: black;
+  background-color: #000000;
 }
 
 .modalCategories{
@@ -225,7 +247,6 @@ body {
   height: 70vh;
   border-radius: 12.5%;
   padding: 0 3.5vh;
-  gap: 2.5vh;
 }
 
 .wiki{
@@ -238,7 +259,7 @@ body {
 }
 
 .wiki:hover{
-  box-shadow: whitesmoke 0px 1px 15px 0px;
+  box-shadow: #f5f5f5 0px 1px 15px 0px;
 }
 
 .modal h1{
@@ -271,11 +292,10 @@ select{
 }
 
 .btn{
-  color: white;
-  border: 0.25vh solid white;
+  color: #ffffff;
+  border: 0.25vh solid #ffffff;
   height: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-

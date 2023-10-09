@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import CategoryButton from "./CategoryButton";
-import ModalContent from "./ModalContent";
 import colorCategory from "../models/ColorCategory";
+import ModalContent from "./ModalContent";
 import BasicInfo from "./BasicInfo";
 import Nav from "./Nav";
 

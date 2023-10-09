@@ -26,8 +26,6 @@ const elementSchema = new mongoose.Schema({
   electron_configuration: String,
   electron_affinity: Number,
   electronegativity_pauling: Number,
-
-  // Missing properties and their data types:
   group: Number,
   bohr_model_image: String,
   bohr_model_3d: String,

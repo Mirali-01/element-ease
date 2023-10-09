@@ -47,8 +47,9 @@ const ModalWrapper = ({ element }) => {
             <img
               className="wiki"
               style={{ borderColor: colorCategory[0][element.category] }}
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968992.png"
-              alt=""
+              src="/assets/images/wiki-icon.png"
+              alt="wiki link to element"
+              attribute="https://cdn-icons-png.flaticon.com/512/5968/5968992.png"
             />
           </a>
         </div>

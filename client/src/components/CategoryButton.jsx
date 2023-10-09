@@ -43,7 +43,6 @@ const CategoryButton = ({ elements, onCategoryHover }) => {
           />,
           document.body
         )}
-      ;
     </>
   );
 };

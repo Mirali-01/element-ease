@@ -1,15 +1,15 @@
 const colorCategory = [
   {
-    "diatomic nonmetal": "rgb(223, 223, 22)",
-    "noble gas": "darkviolet",
-    "alkali metal": "orangered",
-    "alkaline earth metal": "orange",
-    metalloid: "yellowgreen",
-    "polyatomic nonmetal": "lightgreen",
-    "post-transition metal": "darkcyan",
-    "transition metal": "cadetblue",
-    lanthanide: "deepskyblue",
-    actinide: "mediumvioletred",
+    "diatomic nonmetal": "#DFDF16",
+    "noble gas": "#9400D3",
+    "alkali metal": "#FF4500",
+    "alkaline earth metal": "#FFA500",
+    metalloid: "#9ACD32",
+    "polyatomic nonmetal": "#90EE90",
+    "post-transition metal": "#008B8B",
+    "transition metal": "#5F9EA0",
+    lanthanide: "#00BFFF",
+    actinide: "#C71585",
   },
 ];
 

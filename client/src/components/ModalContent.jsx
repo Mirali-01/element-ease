@@ -13,8 +13,9 @@ const ModalContent = ({ element, onClose }) => {
       </h1>
       <div className="downArrow">
         <img
-          src="https://happyinvites.co/wp-content/uploads/2022/04/Arrow-Pointing-Down.gif"
-          alt=""
+          src="assets/images/double-arrow-down.png"
+          alt="scroll down"
+          attribute="https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/chevron-double-down-512.png"
         />
       </div>
       <ModalWrapper element={element} />

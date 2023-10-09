@@ -134,11 +134,14 @@ const RandomWikiElement = () => {
   };
   return (
     <div className="randomWikiElementContainer">
-      <div className="downArrow" style={{ transform: "scale(0.75, 0.75)" }}>
+      <div
+        className="downArrow"
+        style={{ transform: "scale(0.75, 0.75) rotate(-90deg)" }}
+      >
         <img
-          style={{ transform: "rotate(-90deg)" }}
-          src="https://happyinvites.co/wp-content/uploads/2022/04/Arrow-Pointing-Down.gif"
-          alt=""
+          src="assets/images/double-arrow-down.png"
+          alt="scroll down"
+          attribute="https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/chevron-double-down-512.png"
         />
       </div>
       <div className="randomWikiElement">
@@ -148,8 +151,9 @@ const RandomWikiElement = () => {
           rel="noreferrer"
         >
           <img
-            src="https://icons-for-free.com/iconfiles/png/512/design+development+facebook+framework+mobile+react+icon-1320165723839064798.png"
+            src="assets/images/react-icon.png"
             alt="React"
+            attribute="https://icons-for-free.com/iconfiles/png/512/design+development+facebook+framework+mobile+react+icon-1320165723839064798.png"
             onClick={handleImageClick}
           />
         </a>
