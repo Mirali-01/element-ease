@@ -13,6 +13,11 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 2em;
 }
 
 .App {
