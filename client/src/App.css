@@ -7,6 +7,15 @@ body {
 }
 
 .loadingScreen{
+  background-color: #808080;  
+  background-image: url("../public/assets/images/chemistry-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+/* .loadingScreen{
   background-color: #808080;
   color: black;
   display: flex;
@@ -21,7 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-}
+} */
 
 .App {
   text-align: center;

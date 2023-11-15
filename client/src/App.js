@@ -9,8 +9,8 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const fetchElement = async () => {
-    // const response = await axios.get("https://elementease.onrender.com");
-    const response = await axios.get("http://localhost:5000");
+    const response = await axios.get("https://elementease.onrender.com");
+    // const response = await axios.get("http://localhost:5000");
     const { data } = response.data;
     setElementData(data);
     setLoading(false);
