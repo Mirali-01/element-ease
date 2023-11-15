@@ -13,11 +13,10 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
-  text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: flex-end;
-  font-size: 2em;
 }
 
 .App {
@@ -52,19 +51,23 @@ body {
   text-shadow: 0 2px 0 #9400D3;
 }
 
-.randomWikiElement{
+.react-icon, .randomWikiElement-img{
+  border: 0.35vh solid transparent;
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+  animation: spin infinite 5s linear;
+}
+
+.loader, .randomWikiElement{
   padding: 1vh;
 }
 
-.randomWikiElement img{
-    border: solid;
-    height: 8.5vh;
-    width: 8.5vh;
-    border-radius: 50%;
-    animation: spin infinite 5s linear;
-    background: linear-gradient(#000000, #000000) padding-box,
-    linear-gradient(#1e90ff, #b8860b, #9400D3) border-box;
-    border: 0.35vh solid transparent;
+.randomWikiElement-img{
+  height: 8.5vh;
+  width: 8.5vh;
+  background: linear-gradient(#000000, #000000) padding-box,
+  linear-gradient(#1e90ff, #b8860b, #9400D3) border-box;
 }
 
 @keyframes spin {
