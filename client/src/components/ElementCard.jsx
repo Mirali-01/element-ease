@@ -61,7 +61,7 @@ const ElementGrid = ({
   hoverCategory,
   setBasicInfo,
 }) => {
-  if (!element) return null;
+  if (!Array.isArray(element)) return null;
 
   return element.map((elem) => {
     const categoryHoverStyle = {

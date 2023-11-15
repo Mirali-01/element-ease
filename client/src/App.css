@@ -8,18 +8,19 @@ body {
 
 .loadingScreen{
   background-color: #808080;
+  color: black;
   display: flex;
   justify-content: space-between;
-  color: black;
+  padding: 1%;
   height: 100vh;
-  width: 175vh;
+  font-family: none;
 }
 
 .loadingScreen span{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 27.77vh;
+  font-size: 3rem;
 }
 
 .App {

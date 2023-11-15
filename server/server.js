@@ -1,15 +1,11 @@
 // Server API: "https://elementease.onrender.com"
-require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
 const compression = require("compression");
 const mongoose = require("mongoose");
 const dbConfig = require("./config/mongoDB");
-const AllElements = require("./models/AllElements");
-const Element = require("./models/Element");
 const ElementRouter = require("./routes/ElementRoutes");
-const fs = require("fs");
 
 const app = express();
 
@@ -21,32 +17,7 @@ app.use(compression());
 // Connect to MongoDB
 mongoose
   .connect(dbConfig.url, dbConfig.options)
-  .then(async () => {
-    console.log("Connected to MongoDB");
-
-    // Check if data exists before seeding
-    const allElementsCount = await AllElements.countDocuments();
-    if (allElementsCount === 0) {
-      try {
-        const rawData = fs.readFileSync("template.json");
-        const seedData = JSON.parse(rawData);
-
-        await AllElements.create(seedData);
-
-        const elementsData = seedData.data;
-
-        for (const elementData of elementsData) {
-          await Element.create(elementData);
-        }
-
-        console.log("Seed data inserted");
-      } catch (error) {
-        console.error("Error reading or inserting data:", error);
-      }
-    } else {
-      console.log("Database already contains data, skipping seed");
-    }
-  })
+  .then(console.log("Connected to MongoDB"))
   .catch((error) => {
     console.error("Error connecting to MongoDB:", error);
   });
