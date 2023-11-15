@@ -1,5 +1,3 @@
-// Server API: "https://elementease.onrender.com"
-
 const express = require("express");
 const cors = require("cors");
 const compression = require("compression");
@@ -9,12 +7,10 @@ const ElementRouter = require("./routes/ElementRoutes");
 
 const app = express();
 
-// Middleware
 app.use(express.json());
 app.use(cors());
 app.use(compression());
 
-// Connect to MongoDB
 mongoose
   .connect(dbConfig.url, dbConfig.options)
   .then(console.log("Connected to MongoDB"))
@@ -22,10 +18,8 @@ mongoose
     console.error("Error connecting to MongoDB:", error);
   });
 
-// Use API routes
 app.use("/", ElementRouter);
 
-// Start the server
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

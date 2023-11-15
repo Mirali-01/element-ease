@@ -15,23 +15,6 @@ body {
   height: 100vh;
 }
 
-/* .loadingScreen{
-  background-color: #808080;
-  color: black;
-  display: flex;
-  justify-content: space-between;
-  padding: 1%;
-  height: 100vh;
-  font-family: none;
-}
-
-.loadingScreen span{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-} */
-
 .App {
   text-align: center;
 }

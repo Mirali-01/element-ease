@@ -3,7 +3,6 @@ const router = express.Router();
 const Element = require("../models/Element");
 const AllElements = require("../models/AllElements");
 
-// Define your API endpoint to get elements
 router.get("/elements", async (req, res) => {
   try {
     const elements = await Element.find();
