@@ -1,5 +1,5 @@
 {
-  "name": "react-project",
+  "name": "element-ease",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mirali-01/react-project.git"
+    "url": "git+https://github.com/Mirali-01/element-ease.git"
   },
   "keywords": [
     "mern",
@@ -29,9 +29,9 @@
   "author": "Mir Ali",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mirali-01/react-project/issues"
+    "url": "https://github.com/Mirali-01/element-ease/issues"
   },
-  "homepage": "https://github.com/Mirali-01/react-project#readme",
+  "homepage": "https://github.com/Mirali-01/element-ease#readme",
   "dependencies": {
     "compression": "^1.7.4",
     "concurrently": "^8.2.1",
