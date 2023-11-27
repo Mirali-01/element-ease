@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 import CategoryButton from "./CategoryButton";
 import colorCategory from "../models/ColorCategory";
 import ModalContent from "./ModalContent";
 import BasicInfo from "./BasicInfo";
-import Nav from "./Nav";
 
 const ElementCard = ({ element }) => {
   const [showModal, setShowModal] = useState(false);
@@ -14,13 +13,11 @@ const ElementCard = ({ element }) => {
 
   return (
     <div
-      className="mid"
       onMouseOut={() => {
         setBasicInfo("");
       }}
     >
       <div className="periodicTable">
-        <Nav />
         <div className="basicInfoBox">
           {basicInfo && <BasicInfo basicInfo={basicInfo} />}
         </div>
@@ -88,7 +85,7 @@ const ElementGrid = ({
         }}
         key={elem.number}
         style={{
-          gridRow: elem.ypos + 2,
+          gridRow: elem.ypos,
           gridColumn: elem.xpos,
           "--border-color": colorCategory[0][elem.category],
           ...elementStyle,

@@ -1,4 +1,3 @@
-import React from "react";
 import RandomWikiElement from "./RandomWikiElement";
 
 export const Nav = () => {

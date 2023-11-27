@@ -1,4 +1,3 @@
-import React from "react";
 import colorCategory from "../models/ColorCategory";
 
 const BasicInfo = ({ basicInfo }) => {

@@ -21,11 +21,19 @@ body {
 
 .App {
   text-align: center;
-}
-
-.mid{
   width: 175vh;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 3vh;
+  color: rgba(207, 215, 215, 0.99);
 }
 
 .periodicTable{
@@ -33,18 +41,6 @@ body {
   grid-template-columns: repeat(18, 9vh);
   grid-template-rows: repeat(10, 9vh);
   gap: 0.75vh;
-  position: absolute;
-  width: 175vh;
-}
-
-.nav{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: absolute;
-  width: 175vh;
-  font-size: 3vh;
-  color: rgba(207, 215, 215, 0.99)
 }
 
 .nav h1{
@@ -105,7 +101,7 @@ body {
   font-size: 2.35vh;
   display: grid;
   grid-column: 3 / span 4;
-  grid-row: 3 / span 3;
+  grid-row: 1 / span 3;
 }
 
 .basicInfo{
@@ -118,7 +114,7 @@ body {
 
 .categoryBtns{
   grid-column: 7 / span 6;
-  grid-row: 3 / span 3;
+  grid-row: 1 / span 3;
   font-size: 1.25vh;
 }
 

@@ -1,4 +1,3 @@
-import React from "react";
 import ModalWrapper from "./ModalWrapper";
 
 const CategoryModalContent = ({ elements, element, onClose }) => {
