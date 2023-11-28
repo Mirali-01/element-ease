@@ -4,7 +4,7 @@ export const Nav = () => {
   return (
     <div className="nav">
       <RandomWikiElement />
-      <h1>The Periodic Table of Elements</h1>
+      <h1 className="header">The Periodic Table of Elements</h1>
       <div className="linkContainer">
         <a href="https://github.com/Mirali-01" target="_blank" rel="noreferrer">
           <img
