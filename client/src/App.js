@@ -1,12 +1,18 @@
 import "./App.css";
-import PeriodicTable from "./components/PeriodicTable";
 import Nav from "./components/Nav";
+import PeriodicTable from "./components/PeriodicTable";
+import ElementModal from "./components/ElementModal";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <PeriodicTable />
+      <Routes>
+        <Route path="/" element={<PeriodicTable />}>
+          <Route path="/element/:number" element={<ElementModal />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

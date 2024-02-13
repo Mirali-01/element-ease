@@ -1,34 +1,34 @@
 import colorCategory from "../models/ColorCategory";
 
 const ModalWrapper = ({ element }) => {
-  const handleShellOptions = () => {
-    if (!element.shells.length)
-      return (
-        <option value={null}>
-          <b>N/A</b>
-        </option>
-      );
-    return element.shells.map((shell, index) => (
-      <option key={index} value={shell}>
-        <b>{`${shell} (${index + 1})`}</b>
-      </option>
-    ));
-  };
+  // const handleShellOptions = () => {
+  //   if (!element.shells.length)
+  //     return (
+  //       <option value={null}>
+  //         <b>N/A</b>
+  //       </option>
+  //     );
+  //   return element.shells.map((shell, index) => (
+  //     <option key={index} value={shell}>
+  //       <b>{`${shell} (${index + 1})`}</b>
+  //     </option>
+  //   ));
+  // };
 
   // Function to create an array of option elements
-  const handleIonizationEnergyOptions = () => {
-    if (!element.ionization_energies.length)
-      return (
-        <option value={null}>
-          <b>N/A</b>
-        </option>
-      );
-    return element.ionization_energies.map((energy, index) => (
-      <option key={index} value={energy}>
-        <b>{`${energy} kJ/mol (${index})`}</b>
-      </option>
-    ));
-  };
+  // const handleIonizationEnergyOptions = () => {
+  //   if (!element.ionization_energies.length)
+  //     return (
+  //       <option value={null}>
+  //         <b>N/A</b>
+  //       </option>
+  //     );
+  //   return element.ionization_energies.map((energy, index) => (
+  //     <option key={index} value={energy}>
+  //       <b>{`${energy} kJ/mol (${index})`}</b>
+  //     </option>
+  //   ));
+  // };
   return (
     <div className="modalWrapper">
       <div
@@ -88,18 +88,18 @@ const ModalWrapper = ({ element }) => {
             <p style={{ textTransform: "capitalize" }}>
               Type: {element.category}
             </p>
-            <p>
+            {/* <p>
               <label htmlFor="shells">Shells:</label>
               <select name="shells" id="shells">
                 {handleShellOptions()}
               </select>
-            </p>
-            <p>
+            </p> */}
+            {/* <p>
               <label htmlFor="ionization_energies">Ionization Energies:</label>
               <select name="ionization_energies" id="ionization_energies">
                 {handleIonizationEnergyOptions()}
               </select>
-            </p>
+            </p> */}
             <p>
               Density:{" "}
               <b>

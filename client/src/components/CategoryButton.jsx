@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { createPortal } from "react-dom";
 import colorCategory from "../models/ColorCategory";
 import CategoryModalContent from "./CategoryModalContent";
 
@@ -34,15 +33,13 @@ const CategoryButton = ({ elements, onCategoryHover }) => {
   return (
     <>
       <div className="groupColor">{groupColorElements}</div>
-      {showModal &&
-        createPortal(
-          <CategoryModalContent
-            elements={elements}
-            element={selectedElement}
-            onClose={() => setShowModal(false)}
-          />,
-          document.body
-        )}
+      {showModal && (
+        <CategoryModalContent
+          elements={elements}
+          element={selectedElement}
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </>
   );
 };

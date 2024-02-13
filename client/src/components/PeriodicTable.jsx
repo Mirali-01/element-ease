@@ -1,26 +1,22 @@
+import colorCategory from "../models/ColorCategory";
 import { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
 import axios from "axios";
 import CategoryButton from "./CategoryButton";
 import BasicInfo from "./BasicInfo";
-import ModalContent from "./ModalContent";
-import ElementGrid from "./ElementGrid";
 import LoadingScreen from "./LoadingScreen";
+import { Link, Outlet } from "react-router-dom";
 
 const PeriodicTable = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedElem, setSelectedElem] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [elements, setElements] = useState([]);
   const [basicInfo, setBasicInfo] = useState("");
   const [hoverCategory, setHoverCategory] = useState("");
-
-  const [loading, setLoading] = useState(true);
-  const [elementData, setElementData] = useState({});
 
   const fetchElement = async () => {
     try {
       const response = await axios.get("https://elementease.onrender.com");
-      const { data } = response.data;
-      setElementData(data);
+      // const response = await axios.get("http://localhost:5000");
+      setElements(response.data);
       setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -36,40 +32,60 @@ const PeriodicTable = () => {
     return <LoadingScreen />;
   }
 
+  const noShowBasicInfo = () => {
+    setBasicInfo("");
+  };
+
   return (
-    <div
-      onMouseOut={() => {
-        setBasicInfo("");
-      }}
-    >
+    <div onMouseOut={noShowBasicInfo}>
       <div className="periodicTable">
         <div className="basicInfoBox">
           <BasicInfo basicInfo={basicInfo} />
         </div>
         <div className="categoryBtns">
           <CategoryButton
-            elements={elementData}
+            elements={elements}
             onCategoryHover={setHoverCategory}
           />
         </div>
-        <ElementGrid
-          element={elementData}
-          basicInfo={basicInfo}
-          showModal={showModal}
-          setShowModal={setShowModal}
-          setSelectedElem={setSelectedElem}
-          hoverCategory={hoverCategory}
-          setBasicInfo={setBasicInfo}
-        />
+        {elements.map((element) => {
+          const categoryHoverStyle = {
+            transform: "scale(1,1)",
+            "--color": "black",
+            backgroundColor: colorCategory[0][element.category],
+          };
+
+          const elementStyle = {
+            "--color": colorCategory[0][element.category],
+            "--hover-background-color": colorCategory[0][element.category],
+          };
+
+          const hoveredCategoryStyle =
+            hoverCategory === element.category ? categoryHoverStyle : {};
+
+          return (
+            <div
+              key={element._id}
+              className="elementCard"
+              onMouseOver={() => setBasicInfo(element)}
+              style={{
+                gridRow: element.ypos,
+                gridColumn: element.xpos,
+                "--border-color": colorCategory[0][element.category],
+                ...elementStyle,
+                ...hoveredCategoryStyle,
+              }}
+            >
+              <Link to={`/element/${element.number}`}>
+                <h2>{element.number}</h2>
+                <h1>{element.symbol}</h1>
+                <h2>{element.name}</h2>
+              </Link>
+            </div>
+          );
+        })}
+        <Outlet context={{ elements }} />
       </div>
-      {showModal &&
-        createPortal(
-          <ModalContent
-            element={selectedElem}
-            onClose={() => setShowModal(false)}
-          />,
-          document.body
-        )}
     </div>
   );
 };
