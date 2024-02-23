@@ -14,10 +14,8 @@ const PeriodicTable = () => {
 
   const fetchElement = async () => {
     try {
-      // const response = await axios.get(
-      //   "https://elementease.onrender.com/elements"
-      // );
-      const response = await axios.get("http://localhost:5000");
+      const response = await axios.get("https://elementease.onrender.com");
+      // const response = await axios.get("http://localhost:5000");
       setElements(response.data);
       setLoading(false);
     } catch (error) {
