@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import ModalWrapper from "./ModalWrapper";
 
 const CategoryModalContent = ({ elements, element, onClose }) => {
@@ -5,12 +6,22 @@ const CategoryModalContent = ({ elements, element, onClose }) => {
     (elem) => elem.category === element.category
   );
 
+  const title = element.category
+    .split(" ")
+    .map((word) => {
+      return word[0].toUpperCase() + word.substring(1);
+    })
+    .join(" ");
+
   return (
     <div
       className="modalContainer"
       style={{ color: element.color }}
       onClick={onClose}
     >
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <h1 className="modalHeader">{element.category}</h1>
       <div>
         <div

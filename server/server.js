@@ -41,18 +41,6 @@ app.get("/element/:number", async (req, res) => {
   }
 });
 
-// use this to get specific elements for element grid
-// basicInfo and elementCards
-// app.get("/elements", async (req, res) => {
-//   try {
-//     const elements = await Element.find({}, "-_id number symbol name");
-//     res.json(elements);
-//   } catch (error) {
-//     console.error("Error fetching elements:", error);
-//     res.status(500).json({ error: "Internal server error" });
-//   }
-// });
-
 // filter categories
 // app.get("/elements?category={elementCategory}", (req, res) => {
 //   try {

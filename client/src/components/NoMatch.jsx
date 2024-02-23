@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 
 const NoMatch = () => {
@@ -12,6 +13,9 @@ const NoMatch = () => {
 
   return (
     <div style={{ color: "#fff", fontSize: "4vh" }}>
+      <Helmet>
+        <title>Element Ease - Error</title>
+      </Helmet>
       <h2>
         <code>Error 404</code>
       </h2>

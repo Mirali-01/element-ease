@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import colorCategory from "../models/ColorCategory";
 import ModalWrapper from "./ModalWrapper";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
@@ -18,12 +19,12 @@ const ElementModal = () => {
 
   const fetchElement = async (number) => {
     try {
-      const response = await axios.get(
-        `http://elementease.onrender.com/element/${number}`
-      );
       // const response = await axios.get(
-      //   `http://localhost:5000/element/${number}`
+      //   `http://elementease.onrender.com/element/${number}`
       // );
+      const response = await axios.get(
+        `http://localhost:5000/element/${number}`
+      );
       setElement(response.data);
     } catch (error) {
       console.error("Error fetching element:", error);
@@ -46,6 +47,9 @@ const ElementModal = () => {
 
   return (
     <div className="modalContainer" onClick={() => navigate("/")}>
+      <Helmet>
+        <title>{`${element.number} | ${element.symbol} - ${element.name}`}</title>
+      </Helmet>
       <h1
         className="modalHeader"
         style={{ color: colorCategory[0][element.category] }}
@@ -72,7 +76,6 @@ const ElementModal = () => {
             style={{
               border: `0.40vh solid ${colorCategory[0][element.category]}`,
             }}
-            onClick={(e) => e.stopPropagation()}
           >
             <FaArrowLeftLong size="5.5vh" style={{ color: "#ffffff" }} />
           </div>
@@ -90,7 +93,6 @@ const ElementModal = () => {
             style={{
               border: `0.40vh solid ${colorCategory[0][element.category]}`,
             }}
-            onClick={(e) => e.stopPropagation()}
           >
             <FaArrowRightLong size="5.5vh" style={{ color: "#ffffff" }} />
           </div>
