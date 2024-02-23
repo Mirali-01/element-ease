@@ -20,7 +20,7 @@ const ElementModal = () => {
   const fetchElement = async (number) => {
     try {
       const response = await axios.get(
-        `http://elementease.onrender.com/element/${number}`
+        `https://elementease.onrender.com/element/${number}`
       );
       // const response = await axios.get(
       //   `http://localhost:5000/element/${number}`
