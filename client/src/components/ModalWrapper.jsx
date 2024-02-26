@@ -37,15 +37,15 @@ const ModalWrapper = ({ element }) => {
         }}
         className="modal"
         style={{
-          color: colorCategory[0][element.category],
-          border: `0.5vh solid ${colorCategory[0][element.category]}`,
+          color: colorCategory[element.category],
+          border: `0.5vh solid ${colorCategory[element.category]}`,
         }}
       >
         <div className="imgBox">
           <a href={element.source} target="_blank" rel="noreferrer">
             <img
               className="wiki"
-              style={{ borderColor: colorCategory[0][element.category] }}
+              style={{ borderColor: colorCategory[element.category] }}
               src="/assets/images/wiki-icon.png"
               alt="wiki link to element"
               attribute="https://cdn-icons-png.flaticon.com/512/5968/5968992.png"

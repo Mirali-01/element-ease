@@ -14,8 +14,10 @@ const PeriodicTable = () => {
 
   const fetchElement = async () => {
     try {
-      const response = await axios.get("https://elementease.onrender.com");
-      // const response = await axios.get("http://localhost:5000");
+      const response = await axios.get(
+        "https://elementease.onrender.com/elements"
+      );
+      // const response = await axios.get("http://localhost:5000/elements");
       setElements(response.data);
       setLoading(false);
     } catch (error) {
@@ -40,24 +42,21 @@ const PeriodicTable = () => {
     <div onMouseOut={noShowBasicInfo}>
       <div className="periodicTable">
         <div className="basicInfoBox">
-          <BasicInfo basicInfo={basicInfo} />
+          <BasicInfo element={basicInfo} />
         </div>
         <div className="categoryBtns">
-          <CategoryButton
-            elements={elements}
-            onCategoryHover={setHoverCategory}
-          />
+          <CategoryButton onCategoryHover={setHoverCategory} />
         </div>
         {elements.map((element) => {
           const categoryHoverStyle = {
             transform: "scale(1,1)",
             "--color": "black",
-            backgroundColor: colorCategory[0][element.category],
+            backgroundColor: colorCategory[element.category],
           };
 
           const elementStyle = {
-            "--color": colorCategory[0][element.category],
-            "--hover-background-color": colorCategory[0][element.category],
+            "--color": colorCategory[element.category],
+            "--hover-background-color": colorCategory[element.category],
           };
 
           const hoveredCategoryStyle =
@@ -71,7 +70,7 @@ const PeriodicTable = () => {
               style={{
                 gridRow: element.ypos,
                 gridColumn: element.xpos,
-                "--border-color": colorCategory[0][element.category],
+                "--border-color": colorCategory[element.category],
                 ...elementStyle,
                 ...hoveredCategoryStyle,
               }}

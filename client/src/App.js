@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Nav from "./components/Nav";
 import PeriodicTable from "./components/PeriodicTable";
 import ElementModal from "./components/ElementModal";
+import CategoryModal from "./components/CategoryModal";
 import NoMatch from "./components/NoMatch";
 import { Routes, Route } from "react-router-dom";
 
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<PeriodicTable />}>
           <Route path="/element/:number" element={<ElementModal />} />
+          <Route path="/elements" element={<CategoryModal />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>

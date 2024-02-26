@@ -1,17 +1,17 @@
 import colorCategory from "../models/ColorCategory";
 
-const BasicInfo = ({ basicInfo }) => {
+const BasicInfo = ({ element }) => {
   return (
     <div
       className="basicInfo"
       style={{
-        color: colorCategory[0][basicInfo.category],
-        borderColor: colorCategory[0][basicInfo.category],
+        color: colorCategory[element.category],
+        borderColor: colorCategory[element.category],
       }}
     >
-      <h2>{basicInfo.number}</h2>
-      <h1>{basicInfo.symbol}</h1>
-      <h2>{basicInfo.name}</h2>
+      <h2>{element.number}</h2>
+      <h1>{element.symbol}</h1>
+      <h2>{element.name}</h2>
     </div>
   );
 };

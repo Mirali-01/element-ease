@@ -52,7 +52,7 @@ const ElementModal = () => {
       </Helmet>
       <h1
         className="modalHeader"
-        style={{ color: colorCategory[0][element.category] }}
+        style={{ color: colorCategory[element.category] }}
       >
         Scroll Down For More Information
       </h1>
@@ -74,7 +74,7 @@ const ElementModal = () => {
           <div
             className="left"
             style={{
-              border: `0.40vh solid ${colorCategory[0][element.category]}`,
+              border: `0.40vh solid ${colorCategory[element.category]}`,
             }}
           >
             <FaArrowLeftLong size="5.5vh" style={{ color: "#ffffff" }} />
@@ -91,7 +91,7 @@ const ElementModal = () => {
           <div
             className="right"
             style={{
-              border: `0.40vh solid ${colorCategory[0][element.category]}`,
+              border: `0.40vh solid ${colorCategory[element.category]}`,
             }}
           >
             <FaArrowRightLong size="5.5vh" style={{ color: "#ffffff" }} />

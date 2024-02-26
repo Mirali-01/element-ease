@@ -15,9 +15,15 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((error) => console.error("Error connecting to MongoDB:", error));
 
-app.get("/", async (req, res) => {
+app.get("/elements", async (req, res) => {
+  const { category } = req.query;
   try {
-    const elements = await Element.find({});
+    let elements;
+    if (category) {
+      elements = await Element.find({ category });
+    } else {
+      elements = await Element.find({});
+    }
     res.json(elements);
   } catch (error) {
     console.error("Error fetching elements:", error);
@@ -40,12 +46,6 @@ app.get("/element/:number", async (req, res) => {
     res.status(500).json({ message: "Error fetching element" });
   }
 });
-
-// filter categories
-// app.get("/elements?category={elementCategory}", (req, res) => {
-//   try {
-//   } catch (error) {}
-// });
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

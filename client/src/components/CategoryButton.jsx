@@ -1,17 +1,13 @@
-import { useState } from "react";
 import colorCategory from "../models/ColorCategory";
-import CategoryModalContent from "./CategoryModalContent";
+import { Link } from "react-router-dom";
 
-const CategoryButton = ({ elements, onCategoryHover }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedElement, setSelectedElement] = useState(null);
-
+const CategoryButton = ({ onCategoryHover }) => {
   const createCategoryElement = (category, color) => ({
     category,
     color,
   });
 
-  const groupColorElements = Object.entries(colorCategory[0]).map(
+  const groupColorElements = Object.entries(colorCategory).map(
     ([elementCategory, elementColor]) => {
       const categoryElement = createCategoryElement(
         elementCategory,
@@ -23,35 +19,17 @@ const CategoryButton = ({ elements, onCategoryHover }) => {
           key={categoryElement.category}
           categoryElement={categoryElement}
           onCategoryHover={onCategoryHover}
-          setShowModal={setShowModal}
-          setSelectedElement={setSelectedElement}
         />
       );
     }
   );
 
-  return (
-    <>
-      <div className="groupColor">{groupColorElements}</div>
-      {showModal && (
-        <CategoryModalContent
-          elements={elements}
-          element={selectedElement}
-          onClose={() => setShowModal(false)}
-        />
-      )}
-    </>
-  );
+  return <div className="groupColor">{groupColorElements}</div>;
 };
 
 export default CategoryButton;
 
-const CategoryElement = ({
-  categoryElement,
-  onCategoryHover,
-  setShowModal,
-  setSelectedElement,
-}) => {
+const CategoryElement = ({ categoryElement, onCategoryHover }) => {
   return (
     <div
       className="categoryHolder"
@@ -66,21 +44,17 @@ const CategoryElement = ({
         "--hover-background-color": categoryElement.color,
       }}
     >
-      <div
-        onClick={() => {
-          setShowModal(true);
-          setSelectedElement(categoryElement);
-        }}
-        className="sameCategory"
-      >
-        <div
-          className="colorBox"
-          style={{
-            backgroundColor: categoryElement.color,
-          }}
-        ></div>
-        <h2>{categoryElement.category}</h2>
-      </div>
+      <Link to={`/elements?category=${categoryElement.category}`}>
+        <div className="sameCategory">
+          <div
+            className="colorBox"
+            style={{
+              backgroundColor: categoryElement.color,
+            }}
+          ></div>
+          <h2>{categoryElement.category}</h2>
+        </div>
+      </Link>
     </div>
   );
 };
