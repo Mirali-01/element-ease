@@ -15,7 +15,7 @@ const CategoryModalContent = () => {
   const fetchCategory = async (category) => {
     try {
       const response = await axios.get(
-        `http://elementease.onrender.com/elements?category=${category}`
+        `https://elementease.onrender.com/elements?category=${category}`
       );
       // const response = await axios.get(
       //   `http://localhost:5000/elements?category=${category}`
