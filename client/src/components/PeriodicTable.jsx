@@ -1,9 +1,9 @@
 import colorCategory from "../models/ColorCategory";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import CategoryButton from "./CategoryButton";
-import BasicInfo from "./BasicInfo";
-import LoadingScreen from "./LoadingScreen";
+import CategoryButton from "../components/CategoryButton";
+import BasicInfo from "../components/BasicInfo";
+import LoadingScreen from "../components/LoadingScreen";
 import { Link, Outlet } from "react-router-dom";
 
 const PeriodicTable = () => {

@@ -67,6 +67,9 @@ const CategoryModalContent = () => {
     revCategoryList[categoryList[key]] = key;
   }
 
+  // Issue: the first letters of each category, upper or lowercase, for some categories either displays all or none
+  // Issue: slow rendering, first modalCategories then Modalwrapper
+
   return (
     <div
       className="modalContainer"
@@ -98,8 +101,8 @@ const CategoryModalContent = () => {
           className="modalCategories"
           style={{ border: `0.5vh solid ${colorCategory[category]}` }}
         >
-          {categoryElements.map((elem) => (
-            <ModalWrapper key={elem.number} element={elem} />
+          {categoryElements.map((element) => (
+            <ModalWrapper key={element.number} element={element} />
           ))}
         </div>
         <Link
