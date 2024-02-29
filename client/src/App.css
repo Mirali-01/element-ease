@@ -335,10 +335,10 @@ select{
   align-items: center;
 }
 
-@media screen and (max-width: 430px) {
+/* @media screen and (max-width: 430px) {
   .App {
     transform: rotate(90deg) 
     translateX(37.5%) 
     translateY(25%);
   }
-}
+} */
