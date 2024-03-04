@@ -206,7 +206,7 @@ const ModalWrapper = ({ element, enableScroll }) => {
             </p>
           </div>
         </div>
-        <div>
+        <div onMouseEnter={(e) => e.preventDefault()}>
           <model-viewer
             ref={modelViewerRef}
             src={element.bohr_model_3d}
@@ -220,6 +220,7 @@ const ModalWrapper = ({ element, enableScroll }) => {
             autoplay
             camera-orbit="2.5deg 55deg 1.75m"
             field-of-view="20deg"
+            disable-zoom
           />
         </div>
         <div
