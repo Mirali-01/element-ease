@@ -46,7 +46,12 @@ const ElementModal = () => {
   const stopPropagating = (e) => e.stopPropagation();
 
   return (
-    <div className="modalContainer" onClick={() => navigate("/")}>
+    <div
+      className="modalContainer"
+      onClick={() => {
+        navigate("/");
+      }}
+    >
       <Helmet>
         <title>{`${element.number} | ${element.symbol} - ${element.name}`}</title>
       </Helmet>
@@ -54,7 +59,7 @@ const ElementModal = () => {
         className="modalHeader"
         style={{ color: colorCategory[element.category] }}
       >
-        Scroll Down For More Information
+        Scroll Popup For More Information
       </h1>
       <div className="downArrow">
         <img
@@ -80,7 +85,7 @@ const ElementModal = () => {
             <FaArrowLeftLong size="5.5vh" style={{ color: "#ffffff" }} />
           </div>
         </Link>
-        <ModalWrapper element={element} />
+        <ModalWrapper element={element} enableScroll={true} />
         <Link
           to={`/element/${
             element.number + 1 === elements.length + 1 ? 1 : element.number + 1

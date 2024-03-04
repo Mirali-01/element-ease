@@ -31,7 +31,6 @@ const CategoryModalContent = () => {
   }, [category]);
 
   useEffect(() => {
-    // Check if the category exists, if not redirect to Periodic Table home page
     if (!category || !colorCategory[category]) {
       navigate("/");
     }
@@ -67,14 +66,31 @@ const CategoryModalContent = () => {
     revCategoryList[categoryList[key]] = key;
   }
 
-  // Issue: the first letters of each category, upper or lowercase, for some categories either displays all or none
-  // Issue: slow rendering, first modalCategories then Modalwrapper
+  useEffect(() => {
+    disableScroll();
+    return () => {
+      enableScroll();
+    };
+  }, []);
+
+  const enableScroll = () => {
+    document.body.classList.remove("disable-scroll");
+  };
+
+  const disableScroll = () => {
+    document.body.classList.add("disable-scroll");
+  };
+
+  const handleModalClick = () => {
+    enableScroll();
+    navigate("/");
+  };
 
   return (
     <div
       className="modalContainer"
       style={{ color: colorCategory[category] }}
-      onClick={() => navigate("/")}
+      onClick={handleModalClick}
     >
       {categoryTitle()}
       <div className="carousel">
@@ -102,7 +118,11 @@ const CategoryModalContent = () => {
           style={{ border: `0.5vh solid ${colorCategory[category]}` }}
         >
           {categoryElements.map((element) => (
-            <ModalWrapper key={element.number} element={element} />
+            <ModalWrapper
+              key={element.number}
+              element={element}
+              enableScroll={false}
+            />
           ))}
         </div>
         <Link

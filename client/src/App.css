@@ -6,6 +6,10 @@ body {
   background-color: #000000;
 }
 
+.disable-scroll{
+  overflow-y: hidden;
+}
+
 .loadingScreen{
   background-image: url("../public/assets/images/chemistry-loading.png");
   background-size: contain;
@@ -283,6 +287,14 @@ transform: translateY(20px)
   margin: 0;
 }
 
+.wiki-wrapper{
+  display: flex;
+  width: 100%; 
+  a{
+    display: contents;
+  }
+}
+
 .wiki{
   margin: 2vh;
   padding: 0.25vh;
@@ -290,10 +302,23 @@ transform: translateY(20px)
   height: 6vh;
   width: 6vh;
   border-radius: 50%;
+  margin-left: 21.5vh;
+  cursor: pointer;
 }
 
 .wiki:hover, .left:hover, .right:hover{
   box-shadow: #f5f5f5 0px 1px 15px 0px;
+}
+
+.scrolldown{
+  height: 3vh;
+  width: 3vh;
+  margin-left: auto;
+}
+
+.scrollup{
+  margin-left: 0;
+  width: auto;
 }
 
 .modal h1{
@@ -342,3 +367,9 @@ select{
     translateY(25%);
   }
 } */
+
+model-viewer {
+  border-radius: 10%;
+  height: 30vh;
+  width: 35vh;
+}
