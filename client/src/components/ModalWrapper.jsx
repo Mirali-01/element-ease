@@ -76,8 +76,6 @@ const ModalWrapper = ({ element, enableScroll }) => {
         scrolling = false;
       };
 
-      modalContent.addEventListener("click", stopScrolling);
-
       const scrollDown = () => {
         if (scrollPosition < modalContent.scrollHeight && scrolling) {
           scrollPosition += scrollStep;
@@ -88,15 +86,10 @@ const ModalWrapper = ({ element, enableScroll }) => {
 
       const scrollUp = () => {
         if (scrollPosition > 0 && scrolling) {
-          // custom
-          scrollPosition -= scrollStep + 2;
-          modalContent.scrollTo(0, scrollPosition);
-          setTimeout(scrollUp, scrollDelay);
-          // easy but fast
-          // modalContent.scrollTo({
-          //   top: 0,
-          //   behavior: "smooth",
-          // });
+          modalContent.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
         }
       };
 
@@ -107,6 +100,7 @@ const ModalWrapper = ({ element, enableScroll }) => {
       }
 
       modalContent.addEventListener("click", stopScrolling);
+      modalContent.addEventListener("wheel", stopScrolling);
     }
   };
 
