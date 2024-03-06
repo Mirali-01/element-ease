@@ -17,7 +17,7 @@ body {
   background-position: center;
   height: 82.5vh;
   text-align: center;
-  font-size: 50px;
+  font-size: 8vh;
 }
 
 .App {
@@ -142,6 +142,10 @@ body {
       text-decoration: none;
     }
   }
+
+  h2{
+    cursor: pointer;
+  }
 }
 
 .categoryHolder:hover{
@@ -157,15 +161,15 @@ body {
   width: 26vh;
   gap: 1.5vh;
   text-transform: capitalize;
-  cursor: pointer;
   white-space: nowrap;
 }
 
 .colorBox{
-  border: 0.25vh #000000 solid;
+  border: 0.25vh solid;
   height: 3vh;
   width: 3vh;
   border-radius: 10%;
+  cursor: pointer;
 }
 
 .elementCard{
