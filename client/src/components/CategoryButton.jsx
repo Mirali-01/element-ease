@@ -1,11 +1,25 @@
 import colorCategory from "../models/ColorCategory";
 import { Link } from "react-router-dom";
 
-const CategoryButton = ({ onCategoryHover }) => {
+const CategoryButton = ({
+  onCategoryHover,
+  clickedCategories,
+  setClickedCategories,
+}) => {
   const createCategoryElement = (category, color) => ({
     category,
     color,
   });
+
+  const toggleCategory = (category) => {
+    setClickedCategories((prevClickedCategories) => {
+      if (prevClickedCategories.includes(category)) {
+        return prevClickedCategories.filter((c) => c !== category);
+      } else {
+        return [...prevClickedCategories, category];
+      }
+    });
+  };
 
   const groupColorElements = Object.entries(colorCategory).map(
     ([elementCategory, elementColor]) => {
@@ -19,6 +33,8 @@ const CategoryButton = ({ onCategoryHover }) => {
           key={categoryElement.category}
           categoryElement={categoryElement}
           onCategoryHover={onCategoryHover}
+          isClicked={clickedCategories.includes(categoryElement.category)}
+          toggleCategory={toggleCategory}
         />
       );
     }
@@ -29,7 +45,16 @@ const CategoryButton = ({ onCategoryHover }) => {
 
 export default CategoryButton;
 
-const CategoryElement = ({ categoryElement, onCategoryHover }) => {
+const CategoryElement = ({
+  categoryElement,
+  onCategoryHover,
+  isClicked,
+  toggleCategory,
+}) => {
+  const handleClick = () => {
+    toggleCategory(categoryElement.category);
+  };
+
   return (
     <div
       className="categoryHolder"
@@ -44,17 +69,18 @@ const CategoryElement = ({ categoryElement, onCategoryHover }) => {
         "--hover-background-color": categoryElement.color,
       }}
     >
-      <Link to={`/elements?category=${categoryElement.category}`}>
-        <div className="sameCategory">
-          <div
-            className="colorBox"
-            style={{
-              backgroundColor: categoryElement.color,
-            }}
-          ></div>
+      <div className="sameCategory">
+        <div
+          className="colorBox"
+          onClick={handleClick}
+          style={{
+            backgroundColor: isClicked ? categoryElement.color : "#000",
+          }}
+        />
+        <Link to={`/elements?category=${categoryElement.category}`}>
           <h2>{categoryElement.category}</h2>
-        </div>
-      </Link>
+        </Link>
+      </div>
     </div>
   );
 };

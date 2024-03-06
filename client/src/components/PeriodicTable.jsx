@@ -11,6 +11,7 @@ const PeriodicTable = () => {
   const [elements, setElements] = useState([]);
   const [basicInfo, setBasicInfo] = useState("");
   const [hoverCategory, setHoverCategory] = useState("");
+  const [clickedCategories, setClickedCategories] = useState([]);
 
   const fetchElement = async () => {
     try {
@@ -45,12 +46,15 @@ const PeriodicTable = () => {
           <BasicInfo element={basicInfo} />
         </div>
         <div className="categoryBtns">
-          <CategoryButton onCategoryHover={setHoverCategory} />
+          <CategoryButton
+            onCategoryHover={setHoverCategory}
+            clickedCategories={clickedCategories}
+            setClickedCategories={setClickedCategories}
+          />
         </div>
         {elements.map((element) => {
           const categoryHoverStyle = {
-            transform: "scale(1,1)",
-            "--color": "black",
+            "--color": "#000",
             backgroundColor: colorCategory[element.category],
           };
 
@@ -61,6 +65,12 @@ const PeriodicTable = () => {
 
           const hoveredCategoryStyle =
             hoverCategory === element.category ? categoryHoverStyle : {};
+
+          const clickedCategoryStyle = clickedCategories.includes(
+            element.category
+          )
+            ? categoryHoverStyle
+            : {};
 
           return (
             <div
@@ -73,6 +83,7 @@ const PeriodicTable = () => {
                 "--border-color": colorCategory[element.category],
                 ...elementStyle,
                 ...hoveredCategoryStyle,
+                ...clickedCategoryStyle,
               }}
             >
               <Link to={`/element/${element.number}`}>

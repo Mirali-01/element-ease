@@ -36,8 +36,6 @@ const ElementModal = () => {
   }, [number]);
 
   useEffect(() => {
-    // Check if the number is not present or is outside the valid range
-    // Redirect to Periodic Table home page
     if (!number || isNaN(number) || number < 1 || number > elements.length) {
       navigate("/");
     }
