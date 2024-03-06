@@ -206,7 +206,7 @@ const ModalWrapper = ({ element, enableScroll }) => {
             </p>
           </div>
         </div>
-        <div onMouseEnter={(e) => e.preventDefault()}>
+        <div>
           <model-viewer
             ref={modelViewerRef}
             src={element.bohr_model_3d}
@@ -214,13 +214,14 @@ const ModalWrapper = ({ element, enableScroll }) => {
             ar
             ar-modes="webxr scene-viewer quick-look"
             camera-controls
+            disable-tap
+            disable-zoom
             tone-mapping="commerce"
             poster={element.bohr_model_image}
             shadow-intensity="1"
             autoplay
             camera-orbit="2.5deg 55deg 1.75m"
             field-of-view="20deg"
-            disable-zoom
           />
         </div>
         <div
