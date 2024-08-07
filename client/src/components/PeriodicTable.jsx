@@ -18,7 +18,6 @@ const PeriodicTable = () => {
       const response = await axios.get(
         "https://elementease.onrender.com/elements"
       );
-      // const response = await axios.get("http://localhost:5000/elements");
       setElements(response.data);
       setLoading(false);
     } catch (error) {
@@ -42,20 +41,20 @@ const PeriodicTable = () => {
   return (
     <div onMouseOut={noShowBasicInfo}>
       <div className="periodicTable">
-        <div className="basicInfoBox">
-          <BasicInfo element={basicInfo} />
-        </div>
-        <div className="categoryBtns">
-          <CategoryButton
-            onCategoryHover={setHoverCategory}
-            clickedCategories={clickedCategories}
-            setClickedCategories={setClickedCategories}
-          />
-        </div>
+        <BasicInfo element={basicInfo} />
+        <CategoryButton
+          onCategoryHover={setHoverCategory}
+          clickedCategories={clickedCategories}
+          setClickedCategories={setClickedCategories}
+        />
+        <Link to={"/study"}>
+          <button className="showAll">Study Mode</button>
+        </Link>
         {elements.map((element) => {
           const categoryHoverStyle = {
             "--color": "#000",
             backgroundColor: colorCategory[element.category],
+            "--border-color": colorCategory[element.category],
           };
 
           const elementStyle = {
@@ -64,13 +63,25 @@ const PeriodicTable = () => {
           };
 
           const hoveredCategoryStyle =
-            hoverCategory === element.category ? categoryHoverStyle : {};
+            hoverCategory && hoverCategory === element.category
+              ? categoryHoverStyle
+              : {};
 
-          const clickedCategoryStyle = clickedCategories.includes(
-            element.category
-          )
-            ? categoryHoverStyle
-            : {};
+          const clickedCategoryStyle =
+            clickedCategories.length &&
+            clickedCategories.includes(element.category)
+              ? categoryHoverStyle
+              : {};
+
+          const dimStyle =
+            (hoverCategory && hoverCategory !== element.category) ||
+            (clickedCategories.length &&
+              !clickedCategories.includes(element.category))
+              ? {
+                  "--color": "#ffffffcf",
+                  "--border-color": "#ffffffcf",
+                }
+              : {};
 
           return (
             <div
@@ -82,6 +93,7 @@ const PeriodicTable = () => {
                 gridColumn: element.xpos,
                 "--border-color": colorCategory[element.category],
                 ...elementStyle,
+                ...dimStyle,
                 ...hoveredCategoryStyle,
                 ...clickedCategoryStyle,
               }}

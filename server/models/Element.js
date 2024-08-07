@@ -39,6 +39,7 @@ const elementSchema = new mongoose.Schema({
     attribution: String,
   },
   block: String,
+  hint: String,
 });
 
 const Element = mongoose.model("Element", elementSchema);

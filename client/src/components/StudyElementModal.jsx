@@ -11,17 +11,20 @@ import {
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const ElementModal = () => {
+const StudyElementModal = () => {
   const navigate = useNavigate();
   const { number } = useParams();
   const [element, setElement] = useState([]);
-  const { elements } = useOutletContext();
+  const { matchingElements, elements } = useOutletContext();
 
   const fetchElement = async (number) => {
     try {
       const response = await axios.get(
         `https://elementease.onrender.com/element/${number}`
       );
+      // const response = await axios.get(
+      //   `http://localhost:5000/study/element/${number}`
+      // );
       setElement(response.data);
     } catch (error) {
       console.error("Error fetching element:", error);
@@ -32,9 +35,21 @@ const ElementModal = () => {
     fetchElement(number);
   }, [number]);
 
+  const allMatchedElements = Object.entries(matchingElements);
+  const revMatchingElements = {};
+  for (const [key, value] of allMatchedElements) {
+    revMatchingElements[value.number] = key * 1;
+  }
+
   useEffect(() => {
-    if (!number || isNaN(number) || number < 1 || number > elements.length) {
-      navigate("/");
+    if (
+      !number ||
+      isNaN(number) ||
+      number < 1 ||
+      number > elements.length ||
+      number * 1 !== matchingElements[revMatchingElements[number]]?.number
+    ) {
+      navigate("/study");
     }
   }, [number, elements, navigate]);
 
@@ -44,7 +59,7 @@ const ElementModal = () => {
     <div
       className="modalContainer"
       onClick={() => {
-        navigate("/");
+        navigate("/study");
       }}
     >
       <Helmet>
@@ -58,15 +73,18 @@ const ElementModal = () => {
       </h1>
       <div className="downArrow">
         <img
-          src="../assets/images/double-arrow-down.png"
+          src="/assets/images/double-arrow-down.png"
           alt="scroll down"
           attribute="https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/chevron-double-down-512.png"
         />
       </div>
       <div className="carousel">
         <Link
-          to={`/element/${
-            element.number - 1 === 0 ? elements.length : element.number - 1
+          to={`/study/element/${
+            revMatchingElements[element.number] - 1 === -1
+              ? matchingElements[matchingElements.length - 1].number
+              : matchingElements[revMatchingElements[element.number] - 1]
+                  ?.number
           }`}
           className="left"
           onClick={stopPropagating}
@@ -82,8 +100,12 @@ const ElementModal = () => {
         </Link>
         <ModalWrapper element={element} enableScroll={true} />
         <Link
-          to={`/element/${
-            element.number + 1 === elements.length + 1 ? 1 : element.number + 1
+          to={`/study/element/${
+            revMatchingElements[element.number] * 1 + 1 ===
+            matchingElements.length
+              ? matchingElements[0].number
+              : matchingElements[revMatchingElements[element.number] + 1]
+                  ?.number
           }`}
           className="right"
           onClick={stopPropagating}
@@ -102,4 +124,4 @@ const ElementModal = () => {
   );
 };
 
-export default ElementModal;
+export default StudyElementModal;

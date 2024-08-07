@@ -28,59 +28,49 @@ const CategoryButton = ({
         elementColor
       );
 
+      const handleClick = () => {
+        toggleCategory(categoryElement.category);
+      };
+
+      const isClicked = clickedCategories.includes(categoryElement.category);
+
       return (
-        <CategoryElement
+        <div
           key={categoryElement.category}
-          categoryElement={categoryElement}
-          onCategoryHover={onCategoryHover}
-          isClicked={clickedCategories.includes(categoryElement.category)}
-          toggleCategory={toggleCategory}
-        />
+          className="categoryHolder"
+          onMouseEnter={() => {
+            onCategoryHover(categoryElement.category);
+          }}
+          onMouseLeave={() => {
+            onCategoryHover(null);
+          }}
+          style={{
+            "--color": categoryElement.color,
+            "--hover-background-color": categoryElement.color,
+          }}
+        >
+          <div className="sameCategory">
+            <div
+              className="colorBox"
+              onClick={handleClick}
+              style={{
+                backgroundColor: isClicked ? categoryElement.color : "#000",
+              }}
+            />
+            <Link to={`/elements?category=${categoryElement.category}`}>
+              <h2>{categoryElement.category}</h2>
+            </Link>
+          </div>
+        </div>
       );
     }
   );
 
-  return <div className="groupColor">{groupColorElements}</div>;
-};
-
-export default CategoryButton;
-
-const CategoryElement = ({
-  categoryElement,
-  onCategoryHover,
-  isClicked,
-  toggleCategory,
-}) => {
-  const handleClick = () => {
-    toggleCategory(categoryElement.category);
-  };
-
   return (
-    <div
-      className="categoryHolder"
-      onMouseEnter={() => {
-        onCategoryHover(categoryElement.category);
-      }}
-      onMouseLeave={() => {
-        onCategoryHover(null);
-      }}
-      style={{
-        "--color": categoryElement.color,
-        "--hover-background-color": categoryElement.color,
-      }}
-    >
-      <div className="sameCategory">
-        <div
-          className="colorBox"
-          onClick={handleClick}
-          style={{
-            backgroundColor: isClicked ? categoryElement.color : "#000",
-          }}
-        />
-        <Link to={`/elements?category=${categoryElement.category}`}>
-          <h2>{categoryElement.category}</h2>
-        </Link>
-      </div>
+    <div className="categoryBtns">
+      <div className="groupColor">{groupColorElements}</div>
     </div>
   );
 };
+
+export default CategoryButton;

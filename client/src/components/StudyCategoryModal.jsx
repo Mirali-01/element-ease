@@ -1,22 +1,31 @@
 import { Helmet } from "react-helmet-async";
 import ModalWrapper from "./ModalWrapper";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+  useOutletContext,
+  useSearchParams,
+} from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import colorCategory from "../models/ColorCategory";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
-const CategoryModal = () => {
+const StudyCategoryModal = () => {
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category");
   const [categoryElements, setCategoryElements] = useState([]);
   const navigate = useNavigate();
+  const { countedCategory } = useOutletContext();
 
   const fetchCategory = async (category) => {
     try {
       const response = await axios.get(
         `https://elementease.onrender.com/elements?category=${category}`
       );
+      // const response = await axios.get(
+      //   `http://localhost:5000/elements?category=${category}`
+      // );
       setCategoryElements(response.data);
     } catch (error) {
       console.error("Error fetching elements:", error);
@@ -27,9 +36,20 @@ const CategoryModal = () => {
     fetchCategory(category);
   }, [category]);
 
+  const solvedCategories = {};
+
+  let i = 0;
+
+  for (const category in countedCategory) {
+    const [solvedCount, totalCount] = countedCategory[category];
+    if (solvedCount === totalCount) {
+      solvedCategories[category] = i++;
+    }
+  }
+
   useEffect(() => {
-    if (!category || !colorCategory[category]) {
-      navigate("/");
+    if (!category || solvedCategories[category] === undefined) {
+      navigate("/study");
     }
   }, [category, navigate]);
 
@@ -55,7 +75,7 @@ const CategoryModal = () => {
     );
   };
 
-  const categoryList = Object.keys(colorCategory);
+  const categoryList = Object.keys(solvedCategories);
   const totalCategories = categoryList.length - 1;
 
   const revCategoryList = {};
@@ -80,7 +100,7 @@ const CategoryModal = () => {
 
   const handleModalClick = () => {
     enableScroll();
-    navigate("/");
+    navigate("/study");
   };
 
   return (
@@ -92,7 +112,7 @@ const CategoryModal = () => {
       {categoryTitle()}
       <div className="carousel">
         <Link
-          to={`/elements?category=${
+          to={`/study/elements?category=${
             revCategoryList[category] * 1 === 0
               ? categoryList[totalCategories]
               : categoryList[revCategoryList[category] * 1 - 1]
@@ -123,7 +143,7 @@ const CategoryModal = () => {
           ))}
         </div>
         <Link
-          to={`/elements?category=${
+          to={`/study/elements?category=${
             revCategoryList[category] * 1 === totalCategories
               ? categoryList[0]
               : categoryList[revCategoryList[category] * 1 + 1]
@@ -145,4 +165,4 @@ const CategoryModal = () => {
   );
 };
 
-export default CategoryModal;
+export default StudyCategoryModal;

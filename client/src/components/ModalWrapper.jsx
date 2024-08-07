@@ -1,8 +1,11 @@
 import colorCategory from "../models/ColorCategory";
 import { FaArrowDownLong, FaArrowUpLong } from "react-icons/fa6";
-import { useEffect, useRef } from "react"; //
+import { useState, useEffect, useRef } from "react"; //
 
 const ModalWrapper = ({ element, enableScroll }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const modalContentRef = useRef(null);
   const modelViewerRef = useRef(null);
 
@@ -104,6 +107,18 @@ const ModalWrapper = ({ element, enableScroll }) => {
     }
   };
 
+  const handleIframeLoad = () => {
+    setIsLoading(false);
+  };
+
+  const handleImageClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="modalWrapper">
       <div
@@ -119,15 +134,14 @@ const ModalWrapper = ({ element, enableScroll }) => {
         ref={modalContentRef}
       >
         <div className="wiki-wrapper">
-          <a href={element.source} target="_blank" rel="noreferrer">
-            <img
-              className="wiki"
-              style={{ borderColor: colorCategory[element.category] }}
-              src="/assets/images/wiki-icon.png"
-              alt="wiki link to element"
-              attribute="https://cdn-icons-png.flaticon.com/512/5968/5968992.png"
-            />
-          </a>
+          <img
+            className="wiki"
+            style={{ borderColor: colorCategory[element.category] }}
+            src="/assets/images/wiki-icon.png"
+            alt="wiki link to element"
+            attribute="https://cdn-icons-png.flaticon.com/512/5968/5968992.png"
+            onClick={handleImageClick}
+          />
           <div
             className="wiki scrolldown"
             style={{
@@ -138,6 +152,32 @@ const ModalWrapper = ({ element, enableScroll }) => {
             <FaArrowDownLong size="3vh" style={{ color: "#ffffff" }} />
           </div>
         </div>
+        {isModalOpen && (
+          <div className="modalContainer" style={{ padding: "2vh" }}>
+            <span
+              className="close"
+              onClick={handleCloseModal}
+              style={{
+                border: `3px solid ${colorCategory[element.category]}`,
+                "--hover-background-color": colorCategory[element.category],
+              }}
+            >
+              X
+            </span>
+            {isLoading && <div style={{ fontSize: "5vh" }}>Loading...</div>}
+            <iframe
+              src={element.source}
+              title="Wiki Page"
+              onLoad={handleIframeLoad}
+              style={{
+                width: "85%",
+                height: "500px",
+                borderRadius: "1vh",
+                border: `4px solid ${colorCategory[element.category]}`,
+              }}
+            />
+          </div>
+        )}
         <h3>{element.number}</h3>
         <h1>{element.symbol}</h1>
         <h3>{element.name}</h3>
